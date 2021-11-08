@@ -76,9 +76,9 @@ class Application(QMainWindow):
 			self.mostrarError('Solo se permiten valores numericos')
 		else:
 			try:
-				self.importe_total = self.importe_total + agregar_al_carrito(self)
+				self.importe_total = self.importe_total + agregar_al_carrito(self)			
 			except:
-				self.mostrarError('Codigo de producto invalido')			
+				self.mostrarError('Codigo invalido o sin stock')
 
 	def mostrarError(self, mensaje):
 		self.msgError = QDialog()
