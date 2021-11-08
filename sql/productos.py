@@ -43,8 +43,13 @@ def reducir_stock(self):
 		codigo = self.ui.carrito.item(i, 0).text()
 		unidades = self.ui.carrito.item(i, 1).text()
 		for row2 in Producto.select().where(Producto.codigo == codigo.lower()):
-			row2.stock = int(row2.stock) - int(unidades)
-			row2.save()
+			if int(row2.stock) > 0:
+				row2.stock = int(row2.stock) - int(unidades)
+				row2.save()
+			else:
+				row2.stock = 0
+				row2.save()
+				self.mostrarError("Sin stock")
 
 def deleteAllRows(table:QTableWidget) -> None:
     model:QAbstractTableModel = table.model()
