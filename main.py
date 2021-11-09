@@ -8,6 +8,7 @@ from interfaces.interfazGestor import Ui_MainWindow
 from interfaces.interfazInformacionVentas import Ui_interfazInfoVentas
 from interfaces.mensajeError import Ui_Dialog
 from interfaces.interfazGestorProductos import Ui_gestion_productos
+from interfaces.interfazNuevoProducto import Ui_nuevo_producto
 
 from sql.productos import *
 from sql.ventas import *
@@ -17,6 +18,7 @@ from controllers.carrito import *
 from controllers.crear_db import *
 from controllers.validacion import *
 from controllers.gestion_productos import *
+from controllers.nuevo_producto import agregar_producto
 
 import datetime
 
@@ -55,12 +57,23 @@ class Application(QMainWindow):
 		self.showMaximized()
 		self.show()
 
+	def ventana_nuevo_producto(self):
+		self.nuevo_producto = QDialog()
+		self.nuevo_producto.ui = Ui_nuevo_producto()
+		self.nuevo_producto.ui.setupUi(self.nuevo_producto)
+		self.nuevo_producto.ui.btn_nuevo_producto.clicked.connect(self.agregar_nuevo_producto)
+		self.nuevo_producto.show()
+
+	def agregar_nuevo_producto(self):
+		agregar_producto(self.nuevo_producto)
+
 	def gestion_productos(self):
 		self.gestion_productos = QDialog()
 		self.gestion_productos.ui = Ui_gestion_productos()
 		self.gestion_productos.ui.setupUi(self.gestion_productos)
 		cargar_tabla(self.gestion_productos)
 		self.gestion_productos.ui.btn_buscar.clicked.connect(self.buscar_gestion_productos)
+		self.gestion_productos.ui.btn_nuevo.clicked.connect(self.ventana_nuevo_producto)
 		self.gestion_productos.show()
 
 	def buscar_gestion_productos(self):
