@@ -64,7 +64,7 @@ class Application(QMainWindow):
 		self.gestion_productos.show()
 
 	def buscar_gestion_productos(self):
-		buscar(self.gestion_productos)
+		buscar_gp(self.gestion_productos)
 
 	def informacionVenta(self):
 		self.informacionVenta = QDialog()

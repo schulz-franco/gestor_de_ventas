@@ -11,7 +11,7 @@ def cargar_tabla(self):
         self.ui.tablaProductos.setItem(i, 3, QTableWidgetItem(f'$ {row.precio}'))
         self.ui.tablaProductos.setItem(i, 4, QTableWidgetItem(row.stock))
 
-def buscar(self):
+def buscar_gp(self):
     codigos = []
     deleteAllRows(self.ui.tablaProductos)
     if self.ui.barra_busqueda.text() == '':
