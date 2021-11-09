@@ -5,7 +5,9 @@ def agregar_al_carrito(self):
 	cont = 0
 	item = []
 	for row in Producto.select().where(Producto.codigo == self.ui.selectProducto.text().lower()):
-		if int(row.stock) < 0:
+		if int(row.stock) <= 0:
+			row.stock = 0
+			row.save()
 			return 'no_stock'
 		else:
 			if self.ui.input1.text() == '':
