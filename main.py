@@ -16,6 +16,7 @@ from sql.empleados import *
 from controllers.carrito import *
 from controllers.crear_db import *
 from controllers.validacion import *
+from controllers.gestion_productos import *
 
 import datetime
 
@@ -58,7 +59,12 @@ class Application(QMainWindow):
 		self.gestion_productos = QDialog()
 		self.gestion_productos.ui = Ui_gestion_productos()
 		self.gestion_productos.ui.setupUi(self.gestion_productos)
+		cargar_tabla(self.gestion_productos)
+		self.gestion_productos.ui.btn_buscar.clicked.connect(self.buscar_gestion_productos)
 		self.gestion_productos.show()
+
+	def buscar_gestion_productos(self):
+		buscar(self.gestion_productos)
 
 	def informacionVenta(self):
 		self.informacionVenta = QDialog()
