@@ -1,13 +1,21 @@
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
-from sql.productos import Producto
+from sql.productos import Producto, cargar_tabla_productos
 
 def agregar_al_carrito(self):
 	cont = 0
 	item = []
 	for row in Producto.select().where(Producto.codigo == self.ui.selectProducto.text().lower()):
+		if self.ui.input1.text() == '':
+			self.ui.input1.setText('1')
+		unidades = int(self.ui.input1.text())
 		if int(row.stock) <= 0:
 			row.stock = 0
 			row.save()
+			cargar_tabla_productos(self)
+			self.ui.input1.setText('')
+			return 'no_stock'
+		if int(row.stock) < unidades:
+			self.ui.input1.setText('')
 			return 'no_stock'
 		else:
 			if self.ui.input1.text() == '':

@@ -7,6 +7,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QTableWidget, QT
 from interfaces.interfazGestor import Ui_MainWindow
 from interfaces.interfazInformacionVentas import Ui_interfazInfoVentas
 from interfaces.mensajeError import Ui_Dialog
+from interfaces.interfazGestorProductos import Ui_gestion_productos
 
 from sql.productos import *
 from sql.ventas import *
@@ -32,6 +33,8 @@ class Application(QMainWindow):
 		cargar_tabla_ventas(self)
 		cargar_comboVendedor(self)
 
+		self.ui.actionProductos_2.triggered.connect(self.gestion_productos)
+
 		self.ui.btnBuscar1.clicked.connect(self.buscar)
 		self.ui.barraBusqueda.returnPressed.connect(self.ui.btnBuscar1.click)
 		self.ui.selectProducto.returnPressed.connect(self.ui.btn_agregar_carrito.click)
@@ -50,6 +53,12 @@ class Application(QMainWindow):
 
 		self.showMaximized()
 		self.show()
+
+	def gestion_productos(self):
+		self.gestion_productos = QDialog()
+		self.gestion_productos.ui = Ui_gestion_productos()
+		self.gestion_productos.ui.setupUi(self.gestion_productos)
+		self.gestion_productos.show()
 
 	def informacionVenta(self):
 		self.informacionVenta = QDialog()
