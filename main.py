@@ -66,6 +66,8 @@ class Application(QMainWindow):
 
 	def agregar_nuevo_producto(self):
 		agregar_producto(self.nuevo_producto)
+		cargar_tabla(self.gestion_productos)
+		cargar_tabla_productos(self)
 
 	def gestion_productos(self):
 		self.gestion_productos = QDialog()
