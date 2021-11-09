@@ -65,9 +65,12 @@ class Application(QMainWindow):
 		self.nuevo_producto.show()
 
 	def agregar_nuevo_producto(self):
-		agregar_producto(self.nuevo_producto)
-		cargar_tabla(self.gestion_productos)
-		cargar_tabla_productos(self)
+		try:
+			agregar_producto(self.nuevo_producto)
+			cargar_tabla(self.gestion_productos)
+			cargar_tabla_productos(self)
+		except:
+			self.mostrarError('Ya existe un producto que posee ese codigo.')
 
 	def gestion_productos(self):
 		self.gestion_productos = QDialog()
@@ -96,7 +99,7 @@ class Application(QMainWindow):
 	def click_celda(self):
 		datos_fila = []
 		for i in range(4):
-		    datos_fila.append(self.ui.tablaVentas.selectedIndexes()[i].data())
+			datos_fila.append(self.ui.tablaVentas.selectedIndexes()[i].data())
 		return datos_fila
 
 	def agregar_carrito(self):
