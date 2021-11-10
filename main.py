@@ -33,7 +33,6 @@ class Application(QMainWindow):
 
 		iniciar_db()
 		cargar_tabla_productos(self)
-		cargar_tabla_ventas(self)
 		cargar_comboVendedor(self)
 
 		self.ui.actionProductos_2.triggered.connect(self.gestion_productos)

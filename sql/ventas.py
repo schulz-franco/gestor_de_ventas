@@ -17,15 +17,6 @@ class Venta(Model):
 		database = db
 		db_table = 'ventas'
 
-def cargar_tabla_ventas(self):
-	deleteAllRows(self.ui.tablaVentas)
-	for i, row in enumerate(Venta.select().where(Venta.fecha_registro == self.fecha_hoy)):
-		self.ui.tablaVentas.insertRow(i)
-		self.ui.tablaVentas.setItem(i, 0, QTableWidgetItem(str(row.venta)))
-		self.ui.tablaVentas.setItem(i, 1, QTableWidgetItem(f'C-{(row.codigo_vendedor).upper()}'))
-		self.ui.tablaVentas.setItem(i, 2, QTableWidgetItem(f'$ {row.importe}'))
-		self.ui.tablaVentas.setItem(i, 3, QTableWidgetItem(str(row.fecha_registro)))
-
 def cerrar_venta(self):
 	if self.ui.carrito.item(0, 0) != None:
 		reducir_stock(self)
@@ -44,7 +35,6 @@ def cargar_venta(self):
 			codigo_vendedor=row.codigo,
 			importe=self.importe_total,
 			registro=datetime.datetime.now())
-		cargar_tabla_ventas(self)
 		self.importe_total = 0
 		importes_totales_dia(self)
 
