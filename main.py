@@ -19,6 +19,7 @@ from controllers.crear_db import *
 from controllers.validacion import *
 from controllers.gestion_productos import *
 from controllers.nuevo_producto import agregar_producto
+from controllers.editar_producto import cargar, editar_producto
 
 import datetime
 
@@ -59,6 +60,24 @@ class Application(QMainWindow):
 		self.showMaximized()
 		self.show()
 
+	def ventana_editar_producto(self):
+		self.editar_producto = QDialog()
+		self.editar_producto.ui = Ui_nuevo_producto()
+		self.editar_producto.ui.setupUi(self.editar_producto)
+		self.editar_producto.setWindowTitle('Editar producto')
+		self.editar_producto.ui.btn_nuevo_producto.setText('Actualizar')
+		self.editar_producto.ui.btn_nuevo_producto.clicked.connect(self.editar_producto_accion)
+		try:
+			cargar(self)
+			self.editar_producto.show()
+		except:
+			self.mostrarError('Debe seleccionar un producto de la tabla primero.')
+
+	def editar_producto_accion(self):
+		editar_producto(self)
+		cargar_tabla(self.gestion_productos)
+		cargar_tabla_productos(self)
+
 	def ventana_nuevo_producto(self):
 		self.nuevo_producto = QDialog()
 		self.nuevo_producto.ui = Ui_nuevo_producto()
@@ -83,6 +102,7 @@ class Application(QMainWindow):
 		self.gestion_productos.ui.btn_buscar.clicked.connect(self.buscar_gestion_productos)
 		self.gestion_productos.ui.btn_nuevo.clicked.connect(self.ventana_nuevo_producto)
 		self.gestion_productos.ui.btn_remover.clicked.connect(self.remover_gestion_productos)
+		self.gestion_productos.ui.btn_editar.clicked.connect(self.ventana_editar_producto)
 		self.gestion_productos.show()
 
 	def remover_gestion_productos(self):
