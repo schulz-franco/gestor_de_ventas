@@ -38,6 +38,7 @@ class Application(QMainWindow):
 
 		self.ui.actionProductos_2.triggered.connect(self.gestion_productos)
 
+		self.ui.checkIva.setChecked(1)
 		self.ui.btnBuscar1.clicked.connect(self.buscar)
 		self.ui.barraBusqueda.setFocus()
 		self.ui.barraBusqueda.returnPressed.connect(self.ui.btnBuscar1.click)
@@ -81,7 +82,15 @@ class Application(QMainWindow):
 		cargar_tabla(self.gestion_productos)
 		self.gestion_productos.ui.btn_buscar.clicked.connect(self.buscar_gestion_productos)
 		self.gestion_productos.ui.btn_nuevo.clicked.connect(self.ventana_nuevo_producto)
+		self.gestion_productos.ui.btn_remover.clicked.connect(self.remover_gestion_productos)
 		self.gestion_productos.show()
+
+	def remover_gestion_productos(self):
+		try:
+			eliminar(self.gestion_productos)
+			cargar_tabla_productos(self)
+		except:
+			self.mostrarError('Ha ocurrido un error, contacte con el desarrollador.')
 
 	def buscar_gestion_productos(self):
 		buscar_gp(self.gestion_productos)

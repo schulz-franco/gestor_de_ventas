@@ -45,6 +45,12 @@ def buscar_gp(self):
                     self.ui.tablaProductos.setItem(cont, 4, QTableWidgetItem(row.stock))
                     cont += 1
 
+def eliminar(self):
+    codigo = self.ui.tablaProductos.selectedIndexes()[1].data()
+    for item in Producto.select().where(Producto.codigo == codigo.lower()):
+        item.delete_instance()
+    cargar_tabla(self)
+
 def deleteAllRows(table: QTableWidget) -> None:
     model: QAbstractTableModel = table.model()
     model.removeRows(0, model.rowCount())
