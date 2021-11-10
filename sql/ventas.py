@@ -20,11 +20,10 @@ class Venta(Model):
 def cerrar_venta(self):
 	if self.ui.carrito.item(0, 0) != None:
 		reducir_stock(self)
-		fecha = self.ui.tablaVentas.item(1, 3)
+		fecha = self.gestion_ventas.ui.tablaProductos.item(1, 3)
 		deleteAllRows(self.ui.carrito)
 		cargar_tabla_productos(self)
 		if not fecha == datetime.date.today():
-			cargar_tabla_ventas(self)
 			cargar_venta(self)
 		else:
 			cargar_venta(self)
@@ -42,14 +41,14 @@ def importes_totales_dia(self):
 	monto = 0
 	for row in Venta.select().where(Venta.fecha_registro == datetime.date.today()):
 		monto = monto + int(row.importe)
-	self.ui.ingresos_totales_dia.setText(f'INGRESOS DEL DIA: ${monto}')
+	self.ui.ingresos_totales_dia.setText(f'Ingresos dia actual: ${monto}')
 	monto = 0
 	for row in Venta.select():
 		mes_hoy = str(datetime.date.today()).split('-')
 		mes_venta = str(row.fecha_registro).split('-')
 		if mes_venta[1] == mes_hoy[1]:
 			monto = monto + int(row.importe)
-	self.ui.ingresos_totales.setText(f'INGRESOS DEL MES: ${monto}')
+	self.ui.ingresos_totales.setText(f'Ingresos mes actual: ${monto}')
 
 def deleteAllRows(table:QTableWidget) -> None:
     model:QAbstractTableModel = table.model()
