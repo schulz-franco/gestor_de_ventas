@@ -57,6 +57,9 @@ class Application(QMainWindow):
 		self.total_ventas = 0
 
 		self.showMaximized()
+
+		self.gestion_ventas()
+
 		self.show()
 
 	def ingresar_seleccionado(self):
