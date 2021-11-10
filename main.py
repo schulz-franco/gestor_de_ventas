@@ -19,6 +19,7 @@ from control.gestion_productos import *
 from control.nuevo_producto import agregar_producto
 from control.editar_producto import cargar, editar_producto
 from control.gestion_ventas import conf_tabla_ventas, cargar_tabla_gestion_ventas, filtros_venta
+from control.gestion_empleados import conf_tabla_empleados, cargar_tabla_gestion_empleados
 
 import datetime
 
@@ -37,6 +38,7 @@ class Application(QMainWindow):
 
 		self.ui.actionProductos_2.triggered.connect(self.gestion_productos)
 		self.ui.actionVentas_2.triggered.connect(self.gestion_ventas)
+		self.ui.actionEmpleados.triggered.connect(self.gestion_empleados)
 
 		self.ui.checkIva.setChecked(1)
 		self.ui.btnBuscar1.clicked.connect(self.buscar)
@@ -140,6 +142,15 @@ class Application(QMainWindow):
 		cargar_tabla_gestion_ventas(self.gestion_ventas)
 		self.gestion_ventas.ui.btn_buscar.clicked.connect(self.buscar_venta)
 		self.gestion_ventas.show()
+
+	def gestion_empleados(self):
+		self.gestion_empleados = QDialog()
+		self.gestion_empleados.ui = Ui_gestion_productos()
+		self.gestion_empleados.ui.setupUi(self.gestion_empleados)
+		self.gestion_empleados.setWindowTitle('Gestion de empleados')
+		conf_tabla_empleados(self.gestion_empleados)
+		cargar_tabla_gestion_empleados(self.gestion_empleados)
+		self.gestion_empleados.show()
 
 	def buscar_venta(self):
 		filtros_venta(self.gestion_ventas)
