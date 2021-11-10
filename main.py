@@ -49,6 +49,8 @@ class Application(QMainWindow):
 		self.ui.btnCerrarVenta.clicked.connect(self.cerrar_venta)
 		self.ui.btnCancelar.clicked.connect(self.cancelar_venta)
 
+		self.ui.tablaProductos.cellDoubleClicked.connect(self.ingresar_seleccionado)
+
 		self.importes_totales_dia()
 
 		self.importe_total = 0
@@ -56,6 +58,9 @@ class Application(QMainWindow):
 
 		self.showMaximized()
 		self.show()
+
+	def ingresar_seleccionado(self):
+		ingresar_producto_seleccionado(self)
 
 	def ventana_editar_producto(self):
 		self.editar_producto = QDialog()
@@ -158,7 +163,10 @@ class Application(QMainWindow):
 		self.msgError.close()
 
 	def cerrar_venta(self):
-		cerrar_venta(self)
+		try:
+			cerrar_venta(self)
+		except:
+			pass
 
 	def cancelar_venta(self):
 		cancelar_venta(self)

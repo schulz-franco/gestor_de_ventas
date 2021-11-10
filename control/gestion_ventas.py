@@ -20,6 +20,9 @@ def cargar_tabla_gestion_ventas(self):
         self.ui.tablaProductos.setItem(i, 2, QTableWidgetItem(f'$ {row.importe}'))
         self.ui.tablaProductos.setItem(i, 3, QTableWidgetItem(str(row.fecha_registro)))
 
+def filtros_venta(self):
+    pass
+
 def deleteAllRows(table: QTableWidget) -> None:
     model: QAbstractTableModel = table.model()
     model.removeRows(0, model.rowCount())

@@ -56,7 +56,7 @@ class Ui_MainWindow(object):
         self.frame_12.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_12.setObjectName("frame_12")
         self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.frame_12)
-        self.horizontalLayout_7.setContentsMargins(0, 5, 0, 5)
+        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_7.setSpacing(30)
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
         self.ingresos_totales_dia = QtWidgets.QLabel(self.frame_12)

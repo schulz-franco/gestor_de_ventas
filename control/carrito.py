@@ -56,6 +56,10 @@ def cancelar_venta(self):
 	deleteAllRows(self.ui.carrito)
 	self.importe_total = 0
 
+def ingresar_producto_seleccionado(self):
+	codigo = str(self.ui.tablaProductos.selectedIndexes()[1].data())
+	self.ui.selectProducto.setText(codigo)
+
 def deleteAllRows(table:QTableWidget) -> None:
     model:QAbstractTableModel = table.model()
     model.removeRows(0, model.rowCount())

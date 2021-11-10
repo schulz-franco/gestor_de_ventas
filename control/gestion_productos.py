@@ -64,7 +64,6 @@ def cargar_stock(self):
         else:
             return False
 
-
 def deleteAllRows(table: QTableWidget) -> None:
     model: QAbstractTableModel = table.model()
     model.removeRows(0, model.rowCount())
