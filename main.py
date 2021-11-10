@@ -17,6 +17,7 @@ from control.carrito import *
 from control.crear_db import *
 from control.gestion_productos import *
 from control.nuevo_producto import agregar_producto
+from control.nuevo_empleado import agregar_empleado
 from control.editar_producto import cargar, editar_producto
 from control.gestion_ventas import conf_tabla_ventas, cargar_tabla_gestion_ventas, filtros_venta
 from control.gestion_empleados import conf_tabla_empleados, cargar_tabla_gestion_empleados
@@ -101,6 +102,15 @@ class Application(QMainWindow):
 		except:
 			self.mostrarError('Ya existe un producto que posee ese codigo')
 
+	def agregar_nuevo_empleado(self):
+		try:
+			if agregar_empleado(self.nuevo_empleado) != False:
+				cargar_tabla_gestion_empleados(self.gestion_empleados)
+			else:
+				self.mostrarError('Solo valores numericos')
+		except:
+			self.mostrarError('Ya existe un empleado con ese codigo')
+
 	def cargado_stock(self):
 		try:
 			if cargar_stock(self.gestion_productos) == False:
@@ -148,9 +158,22 @@ class Application(QMainWindow):
 		self.gestion_empleados.ui = Ui_gestion_productos()
 		self.gestion_empleados.ui.setupUi(self.gestion_empleados)
 		self.gestion_empleados.setWindowTitle('Gestion de empleados')
+		self.gestion_empleados.ui.btn_nuevo.clicked.connect(self.nuevo_empleado)
 		conf_tabla_empleados(self.gestion_empleados)
 		cargar_tabla_gestion_empleados(self.gestion_empleados)
 		self.gestion_empleados.show()
+
+	def nuevo_empleado(self):
+		self.nuevo_empleado = QDialog()
+		self.nuevo_empleado.ui = Ui_nuevo_producto()
+		self.nuevo_empleado.ui.setupUi(self.nuevo_empleado)
+		self.nuevo_empleado.setWindowTitle('Cargar nuevo empleado')
+		self.nuevo_empleado.ui.input_codigo.setFocus()
+		self.nuevo_empleado.ui.btn_nuevo_producto.clicked.connect(self.agregar_nuevo_empleado)
+		self.nuevo_empleado.ui.input_desc.setPlaceholderText('Nombre')
+		self.nuevo_empleado.ui.input_precio.setPlaceholderText('Apellido')
+		self.nuevo_empleado.ui.input_stock.setPlaceholderText('Edad')
+		self.nuevo_empleado.show()
 
 	def buscar_venta(self):
 		filtros_venta(self.gestion_ventas)
