@@ -1,4 +1,4 @@
-from controllers.validacion import validacion
+from control.validacion import validacion
 from sql.productos import Producto
 
 def agregar_producto(self):

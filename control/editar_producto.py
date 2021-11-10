@@ -1,5 +1,5 @@
 from sql.productos import Producto
-from controllers.validacion import validacion
+from control.validacion import validacion
 
 def cargar(self):
     datos_fila = []

@@ -14,12 +14,12 @@ from sql.productos import *
 from sql.ventas import *
 from sql.empleados import *
 
-from controllers.carrito import *
-from controllers.crear_db import *
-from controllers.validacion import *
-from controllers.gestion_productos import *
-from controllers.nuevo_producto import agregar_producto
-from controllers.editar_producto import cargar, editar_producto
+from control.carrito import *
+from control.crear_db import *
+from control.validacion import *
+from control.gestion_productos import *
+from control.nuevo_producto import agregar_producto
+from control.editar_producto import cargar, editar_producto
 
 import datetime
 

@@ -1,6 +1,6 @@
 from sql.productos import Producto
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
-from controllers.validacion import validacion
+from control.validacion import validacion
 
 def cargar_tabla(self):
     deleteAllRows(self.ui.tablaProductos)
