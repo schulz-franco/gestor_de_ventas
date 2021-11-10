@@ -2,10 +2,9 @@ import sys
 import os
 sys.path.append(os.getcwd())
 
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QTableWidget, QTableWidgetItem
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog
 
 from interfaces.interfazGestor import Ui_MainWindow
-from interfaces.interfazInformacionVentas import Ui_interfazInfoVentas
 from interfaces.mensajeError import Ui_Dialog
 from interfaces.interfazGestorProductos import Ui_gestion_productos
 from interfaces.interfazNuevoProducto import Ui_nuevo_producto
@@ -16,10 +15,10 @@ from sql.empleados import *
 
 from control.carrito import *
 from control.crear_db import *
-from control.validacion import *
 from control.gestion_productos import *
 from control.nuevo_producto import agregar_producto
 from control.editar_producto import cargar, editar_producto
+from control.gestion_ventas import conf_tabla_ventas, cargar_tabla_gestion_ventas
 
 import datetime
 
@@ -38,6 +37,7 @@ class Application(QMainWindow):
 		cargar_comboVendedor(self)
 
 		self.ui.actionProductos_2.triggered.connect(self.gestion_productos)
+		self.ui.actionVentas_2.triggered.connect(self.gestion_ventas)
 
 		self.ui.checkIva.setChecked(1)
 		self.ui.btnBuscar1.clicked.connect(self.buscar)
@@ -49,8 +49,6 @@ class Application(QMainWindow):
 		self.ui.input3.returnPressed.connect(self.ui.btn_agregar_carrito.click)
 		self.ui.btnCerrarVenta.clicked.connect(self.cerrar_venta)
 		self.ui.btnCancelar.clicked.connect(self.cancelar_venta)
-
-		self.ui.tablaVentas.cellDoubleClicked.connect(self.informacionVenta) # SIN TERMINAR
 
 		self.importes_totales_dia()
 
@@ -126,23 +124,17 @@ class Application(QMainWindow):
 	def buscar_gestion_productos(self):
 		buscar_gp(self.gestion_productos)
 
-	def informacionVenta(self):
-		self.informacionVenta = QDialog()
-		self.informacionVenta.ui = Ui_interfazInfoVentas()
-		self.informacionVenta.ui.setupUi(self.informacionVenta)
-		self.informacionVenta.ui.codigo_vendedor.setText(f'Cod. Vendedor: {self.click_celda()[1]}')
-		self.informacionVenta.ui.importe_total.setText(f'Importe total: {self.click_celda()[2]}')
-		self.informacionVenta.ui.fecha_hora.setText(f'Fecha y hora de venta: {self.click_celda()[3]}')
-		self.informacionVenta.show()
+	def gestion_ventas(self):
+		self.gestion_ventas = QDialog()
+		self.gestion_ventas.ui = Ui_gestion_productos()
+		self.gestion_ventas.ui.setupUi(self.gestion_ventas)
+		self.gestion_ventas.setWindowTitle('Gestion de ventas')
+		conf_tabla_ventas(self.gestion_ventas)
+		cargar_tabla_gestion_ventas(self.gestion_ventas)
+		self.gestion_ventas.show()
 
 	def buscar(self):
 		buscar(self)
-
-	def click_celda(self):
-		datos_fila = []
-		for i in range(4):
-			datos_fila.append(self.ui.tablaVentas.selectedIndexes()[i].data())
-		return datos_fila
 
 	def agregar_carrito(self):
 		if self.ui.selectProducto.text() == '':
