@@ -18,7 +18,7 @@ from control.crear_db import *
 from control.gestion_productos import *
 from control.nuevo_producto import agregar_producto
 from control.editar_producto import cargar, editar_producto
-from control.gestion_ventas import conf_tabla_ventas, cargar_tabla_gestion_ventas
+from control.gestion_ventas import conf_tabla_ventas, cargar_tabla_gestion_ventas, filtros_venta
 
 import datetime
 
@@ -138,7 +138,11 @@ class Application(QMainWindow):
 		self.gestion_ventas.setWindowTitle('Gestion de ventas')
 		conf_tabla_ventas(self.gestion_ventas)
 		cargar_tabla_gestion_ventas(self.gestion_ventas)
+		self.gestion_ventas.ui.btn_buscar.clicked.connect(self.buscar_venta)
 		self.gestion_ventas.show()
+
+	def buscar_venta(self):
+		filtros_venta(self.gestion_ventas)
 
 	def buscar(self):
 		buscar(self)
