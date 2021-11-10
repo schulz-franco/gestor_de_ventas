@@ -1,5 +1,6 @@
 from sql.productos import Producto
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
+from controllers.validacion import validacion
 
 def cargar_tabla(self):
     deleteAllRows(self.ui.tablaProductos)
@@ -50,6 +51,19 @@ def eliminar(self):
     for item in Producto.select().where(Producto.codigo == codigo.lower()):
         item.delete_instance()
     cargar_tabla(self)
+
+def cargar_stock(self):
+    codigo = self.ui.tablaProductos.selectedIndexes()[1].data()
+    for item in Producto.select().where(Producto.codigo == codigo.lower()):
+        if validacion(self.ui.input_unidades.text()) == True and self.ui.input_unidades.text() != '':
+            stock = int(self.ui.tablaProductos.selectedIndexes()[4].data())
+            stock_cargado = int(self.ui.input_unidades.text())
+            item.stock = stock + stock_cargado
+            item.save()
+            self.ui.input_unidades.setText('')
+        else:
+            return False
+
 
 def deleteAllRows(table: QTableWidget) -> None:
     model: QAbstractTableModel = table.model()

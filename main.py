@@ -92,7 +92,17 @@ class Application(QMainWindow):
 			cargar_tabla(self.gestion_productos)
 			cargar_tabla_productos(self)
 		except:
-			self.mostrarError('Ya existe un producto que posee ese codigo.')
+			self.mostrarError('Ya existe un producto que posee ese codigo')
+
+	def cargado_stock(self):
+		try:
+			if cargar_stock(self.gestion_productos) == False:
+				self.mostrarError('Casilla en blanco o valores no numericos')
+			cargar_tabla(self.gestion_productos)
+			cargar_tabla_productos(self)
+			self.gestion_productos.ui.barra_busqueda.setText('')
+		except:
+			self.mostrarError('Producto no seleccionado o valores no numericos')
 
 	def gestion_productos(self):
 		self.gestion_productos = QDialog()
@@ -103,6 +113,7 @@ class Application(QMainWindow):
 		self.gestion_productos.ui.btn_nuevo.clicked.connect(self.ventana_nuevo_producto)
 		self.gestion_productos.ui.btn_remover.clicked.connect(self.remover_gestion_productos)
 		self.gestion_productos.ui.btn_editar.clicked.connect(self.ventana_editar_producto)
+		self.gestion_productos.ui.btn_cargar_stock.clicked.connect(self.cargado_stock)
 		self.gestion_productos.show()
 
 	def remover_gestion_productos(self):
