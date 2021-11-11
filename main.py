@@ -9,6 +9,7 @@ from interfaces.interfazGestor import Ui_MainWindow
 from interfaces.mensajeError import Ui_Dialog
 from interfaces.interfazGestorProductos import Ui_gestion_productos
 from interfaces.interfazNuevoProducto import Ui_nuevo_producto
+from interfaces.interfazMasInformacion import Ui_interfaz_mas_informacion
 
 from sql.productos import *
 from sql.ventas import *
@@ -21,7 +22,7 @@ from control.nuevo_producto import agregar_producto
 from control.nuevo_empleado import agregar_empleado
 from control.editar_producto import cargar, editar_producto
 from control.gestion_ventas import conf_tabla_ventas, cargar_tabla_gestion_ventas, filtros_venta
-from control.gestion_empleados import conf_tabla_empleados, cargar_tabla_gestion_empleados, buscar_ge, eliminar_empleado
+from control.gestion_empleados import *
 
 import datetime
 
@@ -155,7 +156,18 @@ class Application(QMainWindow):
         cargar_tabla_gestion_empleados(self.gestion_empleados)
         self.gestion_empleados.ui.btn_buscar.clicked.connect(self.buscar_empleado)
         self.gestion_empleados.ui.btn_remover.clicked.connect(self.remover_gestion_empleados)
+        self.gestion_empleados.ui.btn_cargar_stock.clicked.connect(self.informacion_empleado)
         self.gestion_empleados.show()
+
+    def informacion_empleado(self):
+        try:
+            self.ventana_info_empleado = QDialog()
+            self.ventana_info_empleado.ui = Ui_interfaz_mas_informacion()
+            self.ventana_info_empleado.ui.setupUi(self.ventana_info_empleado)
+            mostrar_informacion_empleado(self)
+            self.ventana_info_empleado.show()
+        except:
+            self.mostrarError('Primero debe seleccionar un empleado')
 
     def remover_gestion_empleados(self):
         try:

@@ -5,61 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0ec02a7-8eb1-4cd9-bf06-09f75a5cc4a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/interfaces/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/carrito.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/carrito.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/crear_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/crear_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/editar_producto.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/editar_producto.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/control/gestion_empleados.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/gestion_empleados.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/gestion_productos.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/gestion_productos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/gestion_ventas.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/gestion_ventas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/nuevo_empleado.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/nuevo_empleado.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/nuevo_producto.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/nuevo_producto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/validacion.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/validacion.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/interfazGestor.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/interfazGestor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/interfazGestorProductos.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/interfazGestorProductos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/interfazNuevoProducto.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/interfazNuevoProducto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/mensajeError.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/mensajeError.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/empleados.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql/empleados.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/productos.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql/productos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/ventas.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql/ventas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uis/interfazGestor.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uis/interfazGestor.ui" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/control/gestion_productos.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-735">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="107" column="60" selection-start-line="107" selection-start-column="60" selection-end-line="107" selection-end-column="60" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -149,23 +103,12 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\gestor_de_ventas\interfaces" />
       <recent name="$PROJECT_DIR$/interfaces" />
       <recent name="C:\Users\alumno\gestor_de_ventas\interfaces" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -236,14 +179,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -262,6 +198,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/interfaces/interfazInformacionVentas.py" />
