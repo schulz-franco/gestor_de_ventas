@@ -20,7 +20,7 @@ from control.nuevo_producto import agregar_producto
 from control.nuevo_empleado import agregar_empleado
 from control.editar_producto import cargar, editar_producto
 from control.gestion_ventas import conf_tabla_ventas, cargar_tabla_gestion_ventas, filtros_venta
-from control.gestion_empleados import conf_tabla_empleados, cargar_tabla_gestion_empleados, buscar_ge
+from control.gestion_empleados import conf_tabla_empleados, cargar_tabla_gestion_empleados, buscar_ge, eliminar_empleado
 
 import datetime
 
@@ -131,7 +131,7 @@ class Application(QMainWindow):
 			eliminar(self.gestion_productos)
 			cargar_tabla_productos(self)
 		except:
-			self.mostrarError('Ha ocurrido un error, contacte con el desarrollador.')
+			self.mostrarError('Primero debe seleccionar un producto')
 
 	def buscar_gestion_productos(self):
 		buscar_gp(self.gestion_productos)
@@ -155,7 +155,15 @@ class Application(QMainWindow):
 		conf_tabla_empleados(self.gestion_empleados)
 		cargar_tabla_gestion_empleados(self.gestion_empleados)
 		self.gestion_empleados.ui.btn_buscar.clicked.connect(self.buscar_empleado)
+		self.gestion_empleados.ui.btn_remover.clicked.connect(self.remover_gestion_empleados)
 		self.gestion_empleados.show()
+
+	def remover_gestion_empleados(self):
+		try:
+			eliminar_empleado(self.gestion_empleados)
+			cargar_comboVendedor(self)
+		except:
+			self.mostrarError('Primero debe seleccionar un empleado')
 
 	def buscar_empleado(self):
 		buscar_ge(self.gestion_empleados)

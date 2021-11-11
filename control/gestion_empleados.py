@@ -71,6 +71,12 @@ def buscar_ge(self):
                     self.ui.tablaProductos.setItem(cont, 4, QTableWidgetItem(''))
                     cont += 1
 
+def eliminar_empleado(self):
+    codigo = self.ui.tablaProductos.selectedIndexes()[1].data()[2:]
+    for item in Vendedor.select().where(Vendedor.codigo == codigo.lower()):
+        item.delete_instance()
+    cargar_tabla_gestion_empleados(self)
+
 def deleteAllRows(table: QTableWidget) -> None:
     model: QAbstractTableModel = table.model()
     model.removeRows(0, model.rowCount())
