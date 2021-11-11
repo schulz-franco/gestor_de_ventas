@@ -95,12 +95,9 @@ class Application(QMainWindow):
 		self.nuevo_producto.show()
 
 	def agregar_nuevo_producto(self):
-		try:
-			agregar_producto(self.nuevo_producto)
-			cargar_tabla(self.gestion_productos)
-			cargar_tabla_productos(self)
-		except:
-			self.mostrarError('Ya existe un producto que posee ese codigo')
+		agregar_producto(self)
+		cargar_tabla(self.gestion_productos)
+		cargar_tabla_productos(self)
 
 	def agregar_nuevo_empleado(self):
 		agregar_empleado(self)

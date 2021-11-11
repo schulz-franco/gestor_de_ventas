@@ -8,6 +8,9 @@ def agregar_empleado(self):
     edad = self.nuevo_empleado.ui.input_stock.text()
 
     try:
+        if codigo == '' or nombre == '' or apellido == '' or edad == '':
+            self.mostrarError('Hay valores en blanco, por favor complete los datos')
+            return
         if validacion(edad):
             Vendedor.create(
                 codigo=codigo,
