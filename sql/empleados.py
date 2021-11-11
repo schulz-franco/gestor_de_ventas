@@ -3,7 +3,7 @@ from peewee import *
 db = SqliteDatabase('db.sqlite')
 
 class Vendedor(Model):
-	codigo = CharField()
+	codigo = CharField(unique=True)
 	nombre = CharField()
 	apellido = CharField()
 	edad = CharField()
@@ -14,6 +14,7 @@ class Vendedor(Model):
 
 def cargar_comboVendedor(self):
 	lista = []
+	self.ui.comboVendedor.clear()
 	for el in Vendedor.select():
 		lista.append((el.nombre).capitalize())
 	self.ui.comboVendedor.addItems(lista)

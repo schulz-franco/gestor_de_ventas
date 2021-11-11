@@ -103,13 +103,9 @@ class Application(QMainWindow):
 			self.mostrarError('Ya existe un producto que posee ese codigo')
 
 	def agregar_nuevo_empleado(self):
-		try:
-			if agregar_empleado(self.nuevo_empleado) != False:
-				cargar_tabla_gestion_empleados(self.gestion_empleados)
-			else:
-				self.mostrarError('Solo valores numericos')
-		except:
-			self.mostrarError('Ya existe un empleado con ese codigo')
+		agregar_empleado(self)
+		cargar_tabla_gestion_empleados(self.gestion_empleados)
+		cargar_comboVendedor(self)
 
 	def cargado_stock(self):
 		try:
