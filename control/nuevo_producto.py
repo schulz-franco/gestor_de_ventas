@@ -4,8 +4,8 @@ from sql.productos import Producto
 def agregar_producto(self):
     codigo = self.nuevo_producto.ui.input_codigo.text()
     descripcion = self.nuevo_producto.ui.input_desc.text()
-    precio = self.ui.nuevo_producto.input_precio.text()
-    stock = self.ui.nuevo_producto.input_stock.text()
+    precio = self.nuevo_producto.ui.input_precio.text()
+    stock = self.nuevo_producto.ui.input_stock.text()
     if codigo == '' or descripcion == '' or precio == '' or stock == '':
         self.mostrarError('Hay valores en blanco, por favor complete los datos')
         return

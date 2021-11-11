@@ -20,7 +20,7 @@ from control.nuevo_producto import agregar_producto
 from control.nuevo_empleado import agregar_empleado
 from control.editar_producto import cargar, editar_producto
 from control.gestion_ventas import conf_tabla_ventas, cargar_tabla_gestion_ventas, filtros_venta
-from control.gestion_empleados import conf_tabla_empleados, cargar_tabla_gestion_empleados
+from control.gestion_empleados import conf_tabla_empleados, cargar_tabla_gestion_empleados, buscar_ge
 
 import datetime
 
@@ -151,12 +151,16 @@ class Application(QMainWindow):
 		self.gestion_empleados.ui = Ui_gestion_productos()
 		self.gestion_empleados.ui.setupUi(self.gestion_empleados)
 		self.gestion_empleados.setWindowTitle('Gestion de empleados')
-		self.gestion_empleados.ui.btn_nuevo.clicked.connect(self.nuevo_empleado)
+		self.gestion_empleados.ui.btn_nuevo.clicked.connect(self.agregar_empleado)
 		conf_tabla_empleados(self.gestion_empleados)
 		cargar_tabla_gestion_empleados(self.gestion_empleados)
+		self.gestion_empleados.ui.btn_buscar.clicked.connect(self.buscar_empleado)
 		self.gestion_empleados.show()
 
-	def nuevo_empleado(self):
+	def buscar_empleado(self):
+		buscar_ge(self.gestion_empleados)
+
+	def agregar_empleado(self):
 		self.nuevo_empleado = QDialog()
 		self.nuevo_empleado.ui = Ui_nuevo_producto()
 		self.nuevo_empleado.ui.setupUi(self.nuevo_empleado)

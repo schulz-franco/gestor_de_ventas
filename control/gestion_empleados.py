@@ -9,6 +9,7 @@ def conf_tabla_empleados(self):
     self.ui.barra_busqueda.setPlaceholderText('Codigo, apellido o nombre')
     self.ui.btn_cargar_stock.setText('Mas información')
     self.ui.input_unidades.hide()
+    self.ui.btn_editar.hide()
 
 def cargar_tabla_gestion_empleados(self):
     deleteAllRows(self.ui.tablaProductos)
@@ -19,6 +20,56 @@ def cargar_tabla_gestion_empleados(self):
         self.ui.tablaProductos.setItem(i, 2, QTableWidgetItem(row.nombre.capitalize()))
         self.ui.tablaProductos.setItem(i, 3, QTableWidgetItem(row.apellido.capitalize()))
         self.ui.tablaProductos.setItem(i, 4, QTableWidgetItem(''))
+
+def buscar_ge(self):
+    codigos = []
+    deleteAllRows(self.ui.tablaProductos)
+    if self.ui.barra_busqueda.text() == '':
+        cargar_tabla_gestion_empleados(self)
+    else:
+        buscado = (self.ui.barra_busqueda.text()).lower()
+        cont = 0
+        for row in Vendedor.select():
+            if buscado in row.codigo:
+                self.ui.tablaProductos.insertRow(cont)
+                self.ui.tablaProductos.setItem(cont, 0, QTableWidgetItem(str(row.id)))
+                self.ui.tablaProductos.setItem(cont, 1, QTableWidgetItem(f'C-{row.codigo.upper()}'))
+                self.ui.tablaProductos.setItem(cont, 2, QTableWidgetItem(row.nombre.capitalize()))
+                self.ui.tablaProductos.setItem(cont, 3, QTableWidgetItem(row.apellido.capitalize()))
+                self.ui.tablaProductos.setItem(cont, 4, QTableWidgetItem(''))
+                codigos.append(row.codigo)
+                cont += 1
+
+        for i, row in enumerate(Vendedor.select()):
+            habilitado = True
+            if buscado in row.nombre:
+                for code in codigos:
+                    if code == row.codigo:
+                        habilitado = False
+                if habilitado:
+                    self.ui.tablaProductos.insertRow(cont)
+                    self.ui.tablaProductos.setItem(cont, 0, QTableWidgetItem(str(row.id)))
+                    self.ui.tablaProductos.setItem(cont, 1, QTableWidgetItem(f'C-{row.codigo.upper()}'))
+                    self.ui.tablaProductos.setItem(cont, 2, QTableWidgetItem(row.nombre.capitalize()))
+                    self.ui.tablaProductos.setItem(cont, 3, QTableWidgetItem(row.apellido.capitalize()))
+                    self.ui.tablaProductos.setItem(cont, 4, QTableWidgetItem(''))
+                    codigos.append(row.codigo)
+                    cont += 1
+
+        for i, row in enumerate(Vendedor.select()):
+            habilitado = True
+            if buscado in row.apellido:
+                for code in codigos:
+                    if code == row.codigo:
+                        habilitado = False
+                if habilitado:
+                    self.ui.tablaProductos.insertRow(cont)
+                    self.ui.tablaProductos.setItem(cont, 0, QTableWidgetItem(str(row.id)))
+                    self.ui.tablaProductos.setItem(cont, 1, QTableWidgetItem(f'C-{row.codigo.upper()}'))
+                    self.ui.tablaProductos.setItem(cont, 2, QTableWidgetItem(row.nombre.capitalize()))
+                    self.ui.tablaProductos.setItem(cont, 3, QTableWidgetItem(row.apellido.capitalize()))
+                    self.ui.tablaProductos.setItem(cont, 4, QTableWidgetItem(''))
+                    cont += 1
 
 def deleteAllRows(table: QTableWidget) -> None:
     model: QAbstractTableModel = table.model()
