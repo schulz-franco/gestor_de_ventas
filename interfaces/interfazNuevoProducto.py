@@ -19,8 +19,8 @@ class Ui_nuevo_producto(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.frame = QtWidgets.QFrame(nuevo_producto)
         self.frame.setStyleSheet("QFrame#frame{\n"
-"border: none;\n"
-"}")
+                                 "border: none;\n"
+                                 "}")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")

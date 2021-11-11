@@ -24,8 +24,8 @@ class Ui_Dialog(object):
         sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
         self.frame.setSizePolicy(sizePolicy)
         self.frame.setStyleSheet("QFrame#frame {\n"
-"border: none;\n"
-"}")
+                                 "border: none;\n"
+                                 "}")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")

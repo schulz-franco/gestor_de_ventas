@@ -26,7 +26,6 @@ def cargar_tabla_productos(self):
 def buscar(self):
 	deleteAllRows(self.ui.tablaProductos)
 	buscado = (self.ui.barraBusqueda.text()).lower()
-	len_busqueda = len(buscado)
 	cont = 0
 	for row in Producto.select():
 		if buscado in row.descripcion:
@@ -47,5 +46,5 @@ def reducir_stock(self):
 			row2.save()
 
 def deleteAllRows(table:QTableWidget) -> None:
-    model:QAbstractTableModel = table.model()
-    model.removeRows(0, model.rowCount())
+	model:QAbstractTableModel = table.model()
+	model.removeRows(0, model.rowCount())

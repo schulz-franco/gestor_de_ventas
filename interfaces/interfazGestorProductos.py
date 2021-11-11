@@ -19,8 +19,8 @@ class Ui_gestion_productos(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.frame = QtWidgets.QFrame(gestion_productos)
         self.frame.setStyleSheet("QFrame#frame {\n"
-"border: none;\n"
-"}")
+                                 "border: none;\n"
+                                 "}")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -34,8 +34,8 @@ class Ui_gestion_productos(object):
         sizePolicy.setHeightForWidth(self.frame_2.sizePolicy().hasHeightForWidth())
         self.frame_2.setSizePolicy(sizePolicy)
         self.frame_2.setStyleSheet("QFrame#frame_2 {\n"
-"border: none;\n"
-"}")
+                                   "border: none;\n"
+                                   "}")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -93,8 +93,8 @@ class Ui_gestion_productos(object):
         sizePolicy.setHeightForWidth(self.frame_3.sizePolicy().hasHeightForWidth())
         self.frame_3.setSizePolicy(sizePolicy)
         self.frame_3.setStyleSheet("QFrame#frame_3 {\n"
-"border: none;\n"
-"}")
+                                   "border: none;\n"
+                                   "}")
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")

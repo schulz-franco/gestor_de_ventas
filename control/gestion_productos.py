@@ -2,6 +2,7 @@ from sql.productos import Producto
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
 from control.validacion import validacion
 
+
 def cargar_tabla(self):
     deleteAllRows(self.ui.tablaProductos)
     for i, row in enumerate(Producto.select()):
@@ -11,6 +12,7 @@ def cargar_tabla(self):
         self.ui.tablaProductos.setItem(i, 2, QTableWidgetItem(row.descripcion))
         self.ui.tablaProductos.setItem(i, 3, QTableWidgetItem(f'$ {row.precio}'))
         self.ui.tablaProductos.setItem(i, 4, QTableWidgetItem(row.stock))
+
 
 def buscar_gp(self):
     codigos = []
@@ -46,11 +48,13 @@ def buscar_gp(self):
                     self.ui.tablaProductos.setItem(cont, 4, QTableWidgetItem(row.stock))
                     cont += 1
 
+
 def eliminar(self):
     codigo = self.ui.tablaProductos.selectedIndexes()[1].data()
     for item in Producto.select().where(Producto.codigo == codigo.lower()):
         item.delete_instance()
     cargar_tabla(self)
+
 
 def cargar_stock(self):
     codigo = self.ui.tablaProductos.selectedIndexes()[1].data()
@@ -63,6 +67,7 @@ def cargar_stock(self):
             self.ui.input_unidades.setText('')
         else:
             return False
+
 
 def deleteAllRows(table: QTableWidget) -> None:
     model: QAbstractTableModel = table.model()

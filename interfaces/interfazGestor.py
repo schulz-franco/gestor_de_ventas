@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(890, 662)
+        MainWindow.resize(890, 568)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -34,8 +34,8 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.frame_10.sizePolicy().hasHeightForWidth())
         self.frame_10.setSizePolicy(sizePolicy)
         self.frame_10.setStyleSheet("QFrame#frame_10 {\n"
-"border: none;\n"
-"}")
+                                    "border: none;\n"
+                                    "}")
         self.frame_10.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_10.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_10.setObjectName("frame_10")
@@ -50,8 +50,8 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
         self.frame.setSizePolicy(sizePolicy)
         self.frame.setStyleSheet("QFrame#frame {\n"
-"border: none;\n"
-"}")
+                                 "border: none;\n"
+                                 "}")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -78,8 +78,8 @@ class Ui_MainWindow(object):
         self.frame_2.setMinimumSize(QtCore.QSize(0, 300))
         self.frame_2.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.frame_2.setStyleSheet("QFrame#frame_2 {\n"
-"border: none;\n"
-"}")
+                                   "border: none;\n"
+                                   "}")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -93,8 +93,8 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.tablaProductos.sizePolicy().hasHeightForWidth())
         self.tablaProductos.setSizePolicy(sizePolicy)
-        self.tablaProductos.setMinimumSize(QtCore.QSize(0, 360))
-        self.tablaProductos.setMaximumSize(QtCore.QSize(16777215, 360))
+        self.tablaProductos.setMinimumSize(QtCore.QSize(0, 280))
+        self.tablaProductos.setMaximumSize(QtCore.QSize(16777215, 300))
         self.tablaProductos.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.tablaProductos.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tablaProductos.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
@@ -132,8 +132,8 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.frame_9.sizePolicy().hasHeightForWidth())
         self.frame_9.setSizePolicy(sizePolicy)
         self.frame_9.setStyleSheet("QFrame#frame_9 {\n"
-"border: none;\n"
-"}")
+                                   "border: none;\n"
+                                   "}")
         self.frame_9.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_9.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_9.setObjectName("frame_9")
@@ -148,8 +148,8 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.frame_6.sizePolicy().hasHeightForWidth())
         self.frame_6.setSizePolicy(sizePolicy)
         self.frame_6.setStyleSheet("QFrame#frame_6 {\n"
-"border: none;\n"
-"}")
+                                   "border: none;\n"
+                                   "}")
         self.frame_6.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_6.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_6.setObjectName("frame_6")
@@ -197,8 +197,8 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.frame_13.sizePolicy().hasHeightForWidth())
         self.frame_13.setSizePolicy(sizePolicy)
         self.frame_13.setStyleSheet("QFrame#frame_13 {\n"
-"border: none;\n"
-"}")
+                                    "border: none;\n"
+                                    "}")
         self.frame_13.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_13.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_13.setObjectName("frame_13")
@@ -290,14 +290,14 @@ class Ui_MainWindow(object):
         self.carrito.verticalHeader().setStretchLastSection(False)
         self.verticalLayout_4.addWidget(self.carrito)
         self.frame_12 = QtWidgets.QFrame(self.frame_9)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.frame_12.sizePolicy().hasHeightForWidth())
         self.frame_12.setSizePolicy(sizePolicy)
         self.frame_12.setStyleSheet("QFrame#frame_12 {\n"
-"border: none;\n"
-"}")
+                                    "border: none;\n"
+                                    "}")
         self.frame_12.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_12.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_12.setObjectName("frame_12")
@@ -305,22 +305,15 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_7.setSpacing(30)
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
-        self.ingresos_totales_dia = QtWidgets.QLabel(self.frame_12)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        self.importe_de_venta = QtWidgets.QLabel(self.frame_12)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.ingresos_totales_dia.sizePolicy().hasHeightForWidth())
-        self.ingresos_totales_dia.setSizePolicy(sizePolicy)
-        self.ingresos_totales_dia.setObjectName("ingresos_totales_dia")
-        self.horizontalLayout_7.addWidget(self.ingresos_totales_dia)
-        self.ingresos_totales = QtWidgets.QLabel(self.frame_12)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.ingresos_totales.sizePolicy().hasHeightForWidth())
-        self.ingresos_totales.setSizePolicy(sizePolicy)
-        self.ingresos_totales.setObjectName("ingresos_totales")
-        self.horizontalLayout_7.addWidget(self.ingresos_totales)
+        sizePolicy.setHeightForWidth(self.importe_de_venta.sizePolicy().hasHeightForWidth())
+        self.importe_de_venta.setSizePolicy(sizePolicy)
+        self.importe_de_venta.setAlignment(QtCore.Qt.AlignCenter)
+        self.importe_de_venta.setObjectName("importe_de_venta")
+        self.horizontalLayout_7.addWidget(self.importe_de_venta)
         self.verticalLayout_4.addWidget(self.frame_12)
         self.verticalLayout.addWidget(self.frame_9)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -385,8 +378,7 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Descuento"))
         item = self.carrito.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "Importe total"))
-        self.ingresos_totales_dia.setText(_translate("MainWindow", "INGRESOS DEL DIA:"))
-        self.ingresos_totales.setText(_translate("MainWindow", "INGRESOS DEL MES:"))
+        self.importe_de_venta.setText(_translate("MainWindow", "Importe de venta:"))
         self.menuGestion.setTitle(_translate("MainWindow", "Gestion"))
         self.actionVentas.setText(_translate("MainWindow", "Ventas"))
         self.actionProductos.setText(_translate("MainWindow", "Productos"))

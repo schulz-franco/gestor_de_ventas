@@ -1,6 +1,7 @@
 from control.validacion import validacion
 from sql.productos import Producto
 
+
 def agregar_producto(self):
     codigo = self.nuevo_producto.ui.input_codigo.text()
     descripcion = self.nuevo_producto.ui.input_desc.text()
@@ -22,6 +23,8 @@ def agregar_producto(self):
             self.nuevo_producto.ui.input_codigo.setFocus()
     except:
         self.mostrarError('Ya existe un producto que posee ese codigo')
+
+
 def clear_inputs(self):
     self.nuevo_producto.ui.input_codigo.setText('')
     self.nuevo_producto.ui.input_desc.setText('')

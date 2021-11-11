@@ -1,6 +1,7 @@
 from control.validacion import validacion
 from sql.empleados import Vendedor
 
+
 def agregar_empleado(self):
     codigo = self.nuevo_empleado.ui.input_codigo.text().lower()
     nombre = self.nuevo_empleado.ui.input_desc.text().lower()
@@ -24,6 +25,7 @@ def agregar_empleado(self):
             self.mostrarError('Solo se permiten valores numericos')
     except:
         self.mostrarError('Ya existe un empleado que posee ese codigo')
+
 
 def clear_inputs(self):
     self.nuevo_empleado.ui.input_codigo.setText('')

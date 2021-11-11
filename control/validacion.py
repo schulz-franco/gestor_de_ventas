@@ -1,3 +1,4 @@
+# coding=utf-8
 def validacion(cadena):
 	validacion = 'qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM<>,.-{}´+¿;:_[]*¨¡?=)(/&%$#"!'
 	for caracter in str(cadena):
