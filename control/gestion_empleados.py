@@ -85,9 +85,9 @@ def eliminar_empleado(self):
 def mostrar_informacion_empleado(self):
     id_empleado = self.gestion_empleados.ui.tablaProductos.selectedIndexes()[0].data()
     for row in Vendedor.select().where(Vendedor.id == id_empleado):
-        self.ventana_info_empleado.ui.info_codigo.setText(str(row.codigo))
-        self.ventana_info_empleado.ui.info_nombre.setText(str(row.nombre))
-        self.ventana_info_empleado.ui.info_apellido.setText(str(row.apellido))
+        self.ventana_info_empleado.ui.info_codigo.setText(str(row.codigo).upper())
+        self.ventana_info_empleado.ui.info_nombre.setText(str(row.nombre).capitalize())
+        self.ventana_info_empleado.ui.info_apellido.setText(str(row.apellido).capitalize())
         self.ventana_info_empleado.ui.info_edad.setText(str(row.edad))
 
 

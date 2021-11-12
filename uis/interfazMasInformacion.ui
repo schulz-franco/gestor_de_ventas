@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>146</width>
+    <width>386</width>
     <height>116</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Empleado</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">border: none;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -42,7 +45,7 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
-       <number>0</number>
+       <number>10</number>
       </property>
       <property name="leftMargin">
        <number>0</number>
@@ -125,7 +128,7 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <property name="spacing">
-       <number>0</number>
+       <number>10</number>
       </property>
       <property name="leftMargin">
        <number>0</number>
@@ -220,7 +223,7 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <property name="spacing">
-       <number>0</number>
+       <number>10</number>
       </property>
       <property name="leftMargin">
        <number>0</number>
@@ -315,7 +318,7 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <property name="spacing">
-       <number>0</number>
+       <number>10</number>
       </property>
       <property name="leftMargin">
        <number>0</number>
