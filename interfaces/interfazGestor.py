@@ -294,6 +294,8 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.importe_de_venta.sizePolicy().hasHeightForWidth())
         self.importe_de_venta.setSizePolicy(sizePolicy)
+        self.importe_de_venta.setStyleSheet("margin-left: 20px;\n"
+"margin-right: 20px;")
         self.importe_de_venta.setAlignment(QtCore.Qt.AlignCenter)
         self.importe_de_venta.setObjectName("importe_de_venta")
         self.horizontalLayout_8.addWidget(self.importe_de_venta)
@@ -361,7 +363,7 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "Empleado"))
         self.btnCerrarVenta.setText(_translate("MainWindow", "Cerrar venta"))
         self.btnCancelar.setText(_translate("MainWindow", "Limpiar carrito"))
-        self.importe_de_venta.setText(_translate("MainWindow", "Importe de venta"))
+        self.importe_de_venta.setText(_translate("MainWindow", "TOTAL"))
         self.menuGestion.setTitle(_translate("MainWindow", "Gestion"))
         self.actionVentas.setText(_translate("MainWindow", "Ventas"))
         self.actionProductos.setText(_translate("MainWindow", "Productos"))

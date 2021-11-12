@@ -658,8 +658,12 @@ border: none;
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="styleSheet">
+             <string notr="true">margin-left: 20px;
+margin-right: 20px;</string>
+            </property>
             <property name="text">
-             <string>Importe de venta</string>
+             <string>TOTAL</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
