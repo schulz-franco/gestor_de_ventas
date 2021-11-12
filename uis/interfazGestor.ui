@@ -426,25 +426,6 @@ border: none;
             </property>
            </widget>
           </item>
-          <item>
-           <widget class="QPushButton" name="btn_agregar_carrito">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>170</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Agregar al carrito</string>
-            </property>
-           </widget>
-          </item>
          </layout>
         </widget>
        </item>
@@ -578,6 +559,44 @@ border: none;
            <number>0</number>
           </property>
           <item>
+           <widget class="QPushButton" name="btn_agregar_carrito">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>170</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Agregar al carrito</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="btnCancelar">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Limpiar carrito</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLabel" name="label">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -632,25 +651,6 @@ border: none;
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="btnCancelar">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Limpiar carrito</string>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QLabel" name="importe_de_venta">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -689,7 +689,7 @@ margin-right: 20px;</string>
    </property>
    <widget class="QMenu" name="menuGestion">
     <property name="title">
-     <string>Gestion</string>
+     <string>Tablas</string>
     </property>
     <addaction name="actionProductos_2"/>
     <addaction name="actionEmpleados"/>

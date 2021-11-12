@@ -17,7 +17,8 @@ def agregar_empleado(self):
                 codigo=codigo,
                 nombre=nombre,
                 apellido=apellido,
-                edad=edad
+                edad=edad,
+                ventas='0'
             )
             clear_inputs(self)
             self.nuevo_empleado.ui.input_codigo.setFocus()

@@ -22,7 +22,7 @@ def cargar_tabla_gestion_empleados(self):
         self.ui.tablaProductos.setItem(i, 1, QTableWidgetItem(f'C-{row.codigo.upper()}'))
         self.ui.tablaProductos.setItem(i, 2, QTableWidgetItem(row.nombre.capitalize()))
         self.ui.tablaProductos.setItem(i, 3, QTableWidgetItem(row.apellido.capitalize()))
-        self.ui.tablaProductos.setItem(i, 4, QTableWidgetItem(''))
+        self.ui.tablaProductos.setItem(i, 4, QTableWidgetItem(row.ventas))
 
 
 def buscar_ge(self):
@@ -40,7 +40,7 @@ def buscar_ge(self):
                 self.ui.tablaProductos.setItem(cont, 1, QTableWidgetItem(f'C-{row.codigo.upper()}'))
                 self.ui.tablaProductos.setItem(cont, 2, QTableWidgetItem(row.nombre.capitalize()))
                 self.ui.tablaProductos.setItem(cont, 3, QTableWidgetItem(row.apellido.capitalize()))
-                self.ui.tablaProductos.setItem(cont, 4, QTableWidgetItem(''))
+                self.ui.tablaProductos.setItem(cont, 4, QTableWidgetItem(row.ventas))
                 codigos.append(row.codigo)
                 cont += 1
 
@@ -56,7 +56,7 @@ def buscar_ge(self):
                     self.ui.tablaProductos.setItem(cont, 1, QTableWidgetItem(f'C-{row.codigo.upper()}'))
                     self.ui.tablaProductos.setItem(cont, 2, QTableWidgetItem(row.nombre.capitalize()))
                     self.ui.tablaProductos.setItem(cont, 3, QTableWidgetItem(row.apellido.capitalize()))
-                    self.ui.tablaProductos.setItem(cont, 4, QTableWidgetItem(''))
+                    self.ui.tablaProductos.setItem(cont, 4, QTableWidgetItem(row.ventas))
                     codigos.append(row.codigo)
                     cont += 1
 
@@ -72,7 +72,7 @@ def buscar_ge(self):
                     self.ui.tablaProductos.setItem(cont, 1, QTableWidgetItem(f'C-{row.codigo.upper()}'))
                     self.ui.tablaProductos.setItem(cont, 2, QTableWidgetItem(row.nombre.capitalize()))
                     self.ui.tablaProductos.setItem(cont, 3, QTableWidgetItem(row.apellido.capitalize()))
-                    self.ui.tablaProductos.setItem(cont, 4, QTableWidgetItem(''))
+                    self.ui.tablaProductos.setItem(cont, 4, QTableWidgetItem(row.ventas))
                     cont += 1
 
 

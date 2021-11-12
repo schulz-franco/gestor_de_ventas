@@ -8,6 +8,7 @@ class Vendedor(Model):
     nombre = CharField()
     apellido = CharField()
     edad = CharField()
+    ventas = CharField()
 
     class Meta:
         database = db

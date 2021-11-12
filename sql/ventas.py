@@ -34,6 +34,8 @@ def cerrar_venta(self):
 
 def cargar_venta(self):
     for row in Vendedor.select().where(Vendedor.nombre == (self.ui.comboVendedor.currentText()).lower()):
+        row.ventas = int(row.ventas) + 1
+        row.save()
         Venta.create(
             codigo_vendedor=row.codigo,
             importe=self.importe_total,
@@ -46,6 +48,7 @@ def importe_venta(self):
     for cont in range(self.ui.carrito.rowCount()):
         importe = importe + int(self.ui.carrito.item(cont, 5).text()[2:])
     self.ui.importe_de_venta.setText(f'TOTAL: ${importe}')
+    self.ui.importe_de_venta.show()
 
 
 def deleteAllRows(table: QTableWidget) -> None:

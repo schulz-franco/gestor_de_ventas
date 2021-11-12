@@ -54,6 +54,7 @@ class Application(QMainWindow):
         self.ui.input3.returnPressed.connect(self.ui.btn_agregar_carrito.click)
         self.ui.btnCerrarVenta.clicked.connect(self.cerrar_venta)
         self.ui.btnCancelar.clicked.connect(self.cancelar_venta)
+        self.ui.importe_de_venta.hide()
 
         self.ui.tablaProductos.cellDoubleClicked.connect(self.ingresar_seleccionado)
 
