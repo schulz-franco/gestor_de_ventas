@@ -13,6 +13,7 @@ class Venta(Model):
     codigo_vendedor = CharField()
     importe = CharField()
     fecha_registro = DateField(default=datetime.datetime.now())
+    hora_registro = TimeField(default=datetime.datetime.now().time())
 
     class Meta:
         database = db
@@ -21,15 +22,18 @@ class Venta(Model):
 
 def cerrar_venta(self):
     if self.ui.carrito.item(0, 0) is not None:
-        reducir_stock(self)
-        fecha = self.gestion_ventas.ui.tablaProductos.item(1, 3)
-        importe_venta(self)
-        deleteAllRows(self.ui.carrito)
-        cargar_tabla_productos(self)
-        if not fecha == datetime.date.today():
-            cargar_venta(self)
+        if self.ui.comboVendedor.currentText() == 'Empleado':
+            self.mostrarError('Primero debe seleccionar un empleado para cerrar la venta')
         else:
-            cargar_venta(self)
+            reducir_stock(self)
+            fecha = self.gestion_ventas.ui.tablaProductos.item(1, 3)
+            importe_venta(self)
+            deleteAllRows(self.ui.carrito)
+            cargar_tabla_productos(self)
+            if not fecha == datetime.date.today():
+                cargar_venta(self)
+            else:
+                cargar_venta(self)
 
 
 def cargar_venta(self):
@@ -38,8 +42,8 @@ def cargar_venta(self):
         row.save()
         Venta.create(
             codigo_vendedor=row.codigo,
-            importe=self.importe_total,
-            registro=datetime.datetime.now())
+            importe=self.importe_total
+        )
         self.importe_total = 0
 
 

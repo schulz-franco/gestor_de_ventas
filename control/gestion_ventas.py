@@ -20,6 +20,7 @@ def cargar_tabla_gestion_ventas(self):
         self.ui.tablaProductos.setItem(i, 1, QTableWidgetItem(f'C-{row.codigo_vendedor.upper()}'))
         self.ui.tablaProductos.setItem(i, 2, QTableWidgetItem(f'$ {row.importe}'))
         self.ui.tablaProductos.setItem(i, 3, QTableWidgetItem(str(row.fecha_registro)))
+        self.ui.tablaProductos.setItem(i, 4, QTableWidgetItem(str(row.hora_registro)[:8]))
 
 
 def filtros_venta(self):
@@ -37,6 +38,7 @@ def filtros_venta(self):
                 self.ui.tablaProductos.setItem(cont, 1, QTableWidgetItem(f'C-{(row.codigo_vendedor).upper()}'))
                 self.ui.tablaProductos.setItem(cont, 2, QTableWidgetItem(f'$ {row.importe}'))
                 self.ui.tablaProductos.setItem(cont, 3, QTableWidgetItem(str(row.fecha_registro)))
+                self.ui.tablaProductos.setItem(i, 4, QTableWidgetItem(str(row.hora_registro)[:8]))
                 ids.append(row.codigo_vendedor)
                 cont += 1
 
@@ -52,6 +54,7 @@ def filtros_venta(self):
                     self.ui.tablaProductos.setItem(cont, 1, QTableWidgetItem(f'C-{row.codigo_vendedor.upper()}'))
                     self.ui.tablaProductos.setItem(cont, 2, QTableWidgetItem(f'$ {row.importe}'))
                     self.ui.tablaProductos.setItem(cont, 3, QTableWidgetItem(str(row.fecha_registro)))
+                    self.ui.tablaProductos.setItem(i, 4, QTableWidgetItem(str(row.hora_registro)[:8]))
                     cont += 1
 
 

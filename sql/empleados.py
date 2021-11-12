@@ -17,6 +17,7 @@ class Vendedor(Model):
 
 def cargar_comboVendedor(self):
     lista = []
+    lista.append('Empleado')
     self.ui.comboVendedor.clear()
     for el in Vendedor.select():
         lista.append(el.nombre.capitalize())
