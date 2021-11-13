@@ -81,18 +81,21 @@ class interfaz_db_helper(QDialog):
             Producto.truncate_table()
         else:
             Producto.create_table()
+        self.mostrar_elementos(Producto, self.ui.importe_de_venta_2)
 
     def limpiar_tabla_empleados(self):
         if Vendedor.table_exists():
             Vendedor.truncate_table()
         else:
             Vendedor.create_table()
+        self.mostrar_elementos(Vendedor, self.ui.importe_de_venta_4)
 
     def limpiar_tabla_ventas(self):
         if Venta.table_exists():
             Venta.truncate_table()
         else:
             Venta.create_table()
+        self.mostrar_elementos(Venta, self.ui.importe_de_venta_6)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

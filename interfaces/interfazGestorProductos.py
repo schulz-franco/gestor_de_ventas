@@ -14,13 +14,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_gestion_productos(object):
     def setupUi(self, gestion_productos):
         gestion_productos.setObjectName("gestion_productos")
-        gestion_productos.resize(686, 484)
+        gestion_productos.resize(952, 484)
         self.verticalLayout = QtWidgets.QVBoxLayout(gestion_productos)
         self.verticalLayout.setObjectName("verticalLayout")
         self.frame = QtWidgets.QFrame(gestion_productos)
         self.frame.setStyleSheet("QFrame#frame {\n"
-                                 "border: none;\n"
-                                 "}")
+"border: none;\n"
+"}")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -34,8 +34,8 @@ class Ui_gestion_productos(object):
         sizePolicy.setHeightForWidth(self.frame_2.sizePolicy().hasHeightForWidth())
         self.frame_2.setSizePolicy(sizePolicy)
         self.frame_2.setStyleSheet("QFrame#frame_2 {\n"
-                                   "border: none;\n"
-                                   "}")
+"border: none;\n"
+"}")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -58,6 +58,7 @@ class Ui_gestion_productos(object):
         sizePolicy.setHeightForWidth(self.tablaProductos.sizePolicy().hasHeightForWidth())
         self.tablaProductos.setSizePolicy(sizePolicy)
         self.tablaProductos.setMinimumSize(QtCore.QSize(0, 200))
+        self.tablaProductos.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.tablaProductos.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.tablaProductos.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.tablaProductos.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
@@ -78,7 +79,7 @@ class Ui_gestion_productos(object):
         item = QtWidgets.QTableWidgetItem()
         self.tablaProductos.setHorizontalHeaderItem(4, item)
         self.tablaProductos.horizontalHeader().setCascadingSectionResizes(True)
-        self.tablaProductos.horizontalHeader().setDefaultSectionSize(120)
+        self.tablaProductos.horizontalHeader().setDefaultSectionSize(180)
         self.tablaProductos.horizontalHeader().setSortIndicatorShown(False)
         self.tablaProductos.horizontalHeader().setStretchLastSection(True)
         self.tablaProductos.verticalHeader().setCascadingSectionResizes(False)
@@ -93,8 +94,8 @@ class Ui_gestion_productos(object):
         sizePolicy.setHeightForWidth(self.frame_3.sizePolicy().hasHeightForWidth())
         self.frame_3.setSizePolicy(sizePolicy)
         self.frame_3.setStyleSheet("QFrame#frame_3 {\n"
-                                   "border: none;\n"
-                                   "}")
+"border: none;\n"
+"}")
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
