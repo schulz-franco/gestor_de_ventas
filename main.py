@@ -24,6 +24,8 @@ from control.editar_producto import cargar, editar_producto
 from control.gestion_ventas import conf_tabla_ventas, cargar_tabla_gestion_ventas, filtros_venta
 from control.gestion_empleados import *
 
+from exportar_excel import generar_excel
+
 import datetime
 
 
@@ -40,9 +42,13 @@ class Application(QMainWindow):
         cargar_tabla_productos(self)
         cargar_comboVendedor(self)
 
-        self.ui.actionProductos_2.triggered.connect(self.gestion_productos)
-        self.ui.actionVentas_2.triggered.connect(self.gestion_ventas)
-        self.ui.actionEmpleados.triggered.connect(self.gestion_empleados)
+        self.ui.actionProductos_3.triggered.connect(self.gestion_productos)
+        self.ui.actionVentas_3.triggered.connect(self.gestion_ventas)
+        self.ui.actionEmpleados_2.triggered.connect(self.gestion_empleados)
+
+        self.ui.action_exportar_productos.triggered.connect(self.excel_productos)
+        self.ui.action_exportar_empleados.triggered.connect(self.excel_empleados)
+        self.ui.action_exportar_ventas.triggered.connect(self.excel_ventas)
 
         self.ui.checkIva.setChecked(1)
         self.ui.btnBuscar1.clicked.connect(self.buscar)
@@ -64,6 +70,15 @@ class Application(QMainWindow):
         self.gestion_ventas()
 
         self.show()
+
+    def excel_productos(self):
+        generar_excel('productos', Producto)
+
+    def excel_empleados(self):
+        generar_excel('empleados', Vendedor)
+
+    def excel_ventas(self):
+        generar_excel('ventas', Venta)
 
     def ingresar_seleccionado(self):
         ingresar_producto_seleccionado(self)
@@ -227,10 +242,6 @@ class Application(QMainWindow):
 
     def cancelar_venta(self):
         cancelar_venta(self)
-
-    def importes_totales_dia(self):
-        importes_totales_dia(self)
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

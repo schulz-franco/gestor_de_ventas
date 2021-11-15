@@ -129,7 +129,7 @@ border: none;
            <widget class="QToolButton" name="btnBuscar1">
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>70</width>
               <height>30</height>
              </size>
             </property>
@@ -664,18 +664,33 @@ border: none;
      <x>0</x>
      <y>0</y>
      <width>670</width>
-     <height>24</height>
+     <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuGestion">
+   <widget class="QMenu" name="menuProductos">
     <property name="title">
-     <string>Tablas</string>
+     <string>Productos</string>
     </property>
-    <addaction name="actionProductos_2"/>
-    <addaction name="actionEmpleados"/>
-    <addaction name="actionVentas_2"/>
+    <addaction name="actionProductos_3"/>
+    <addaction name="action_exportar_productos"/>
    </widget>
-   <addaction name="menuGestion"/>
+   <widget class="QMenu" name="menuVentas">
+    <property name="title">
+     <string>Ventas</string>
+    </property>
+    <addaction name="actionVentas_3"/>
+    <addaction name="action_exportar_ventas"/>
+   </widget>
+   <widget class="QMenu" name="menuEmpleados">
+    <property name="title">
+     <string>Empleados</string>
+    </property>
+    <addaction name="actionEmpleados_2"/>
+    <addaction name="action_exportar_empleados"/>
+   </widget>
+   <addaction name="menuProductos"/>
+   <addaction name="menuEmpleados"/>
+   <addaction name="menuVentas"/>
   </widget>
   <action name="actionVentas">
    <property name="text">
@@ -705,6 +720,36 @@ border: none;
   <action name="actionVentas_2">
    <property name="text">
     <string>Ventas</string>
+   </property>
+  </action>
+  <action name="actionProductos_3">
+   <property name="text">
+    <string>Gestionar</string>
+   </property>
+  </action>
+  <action name="actionVentas_3">
+   <property name="text">
+    <string>Consultar</string>
+   </property>
+  </action>
+  <action name="actionEmpleados_2">
+   <property name="text">
+    <string>Gestionar</string>
+   </property>
+  </action>
+  <action name="action_exportar_productos">
+   <property name="text">
+    <string>Exportar excel</string>
+   </property>
+  </action>
+  <action name="action_exportar_empleados">
+   <property name="text">
+    <string>Exportar excel</string>
+   </property>
+  </action>
+  <action name="action_exportar_ventas">
+   <property name="text">
+    <string>Exportar excel</string>
    </property>
   </action>
  </widget>
