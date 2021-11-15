@@ -1,5 +1,5 @@
 from control.validacion import validacion
-from sql.empleados import Vendedor
+from sql.datos import Vendedor
 
 
 def agregar_empleado(self):

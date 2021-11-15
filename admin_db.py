@@ -2,9 +2,8 @@ from PyQt5.QtWidgets import QApplication, QDialog
 
 from interfaces.interfazAdmin import Ui_admin_db
 
-from sql.productos import Producto, db
-from sql.ventas import Venta
-from sql.empleados import Vendedor
+from sql.datos import Producto, Venta, Vendedor
+
 
 import sys
 

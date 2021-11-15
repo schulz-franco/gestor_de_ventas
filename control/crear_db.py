@@ -1,6 +1,4 @@
-from sql.productos import Producto
-from sql.ventas import Venta
-from sql.empleados import Vendedor
+from sql.datos import Producto, Venta, Vendedor
 
 
 def iniciar_db():

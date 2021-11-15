@@ -1,6 +1,5 @@
-from sql.productos import Producto
+from sql.datos import Producto
 from control.validacion import validacion
-
 
 def cargar(self):
     datos_fila = []
@@ -17,8 +16,7 @@ def cargar(self):
 def editar_producto(self):
     codigo = self.editar_producto.ui.input_codigo.text().lower()
     for row in Producto.select().where(Producto.codigo == codigo):
-        if validacion(self.editar_producto.ui.input_precio.text()) == True and validacion(
-                self.editar_producto.ui.input_stock.text()) == True:
+        if validacion(self.editar_producto.ui.input_precio.text()) == True and validacion(self.editar_producto.ui.input_stock.text()) == True:
             row.descripcion = self.editar_producto.ui.input_desc.text()
             row.precio = self.editar_producto.ui.input_precio.text()
             row.stock = self.editar_producto.ui.input_stock.text()

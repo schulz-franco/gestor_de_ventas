@@ -11,18 +11,20 @@ from interfaces.interfazGestorProductos import Ui_gestion_productos
 from interfaces.interfazNuevoProducto import Ui_nuevo_producto
 from interfaces.interfazMasInformacion import Ui_interfaz_mas_informacion
 
-from sql.productos import *
-from sql.ventas import *
-from sql.empleados import *
+from sql.datos import Producto, Venta, Vendedor
 
-from control.carrito import *
-from control.crear_db import *
-from control.gestion_productos import *
+from control.operaciones_ventas import cerrar_venta
+from control.operaciones_productos import cargar_tabla_productos, buscar
+from control.cargar_cbo_empleados import cargar_comboVendedor
+from control.carrito import agregar_al_carrito, cancelar_venta, ingresar_producto_seleccionado
+from control.crear_db import iniciar_db
+from control.gestion_productos import cargar_tabla, buscar_gp, eliminar, cargar_stock
 from control.nuevo_producto import agregar_producto
 from control.nuevo_empleado import agregar_empleado
 from control.editar_producto import cargar, editar_producto
 from control.gestion_ventas import conf_tabla_ventas, cargar_tabla_gestion_ventas, filtros_venta
-from control.gestion_empleados import *
+from control.gestion_empleados import conf_tabla_empleados, cargar_tabla_gestion_empleados, buscar_ge, eliminar_empleado, mostrar_informacion_empleado
+from control.validacion import validacion
 
 from exportar_excel import generar_excel
 
@@ -72,13 +74,13 @@ class Application(QMainWindow):
         self.show()
 
     def excel_productos(self):
-        generar_excel('productos', Producto)
+        generar_excel(self, 'productos', Producto)
 
     def excel_empleados(self):
-        generar_excel('empleados', Vendedor)
+        generar_excel(self, 'empleados', Vendedor)
 
     def excel_ventas(self):
-        generar_excel('ventas', Venta)
+        generar_excel(self, 'ventas', Venta)
 
     def ingresar_seleccionado(self):
         ingresar_producto_seleccionado(self)
@@ -94,11 +96,11 @@ class Application(QMainWindow):
             cargar(self)
             self.editar_producto.show()
         except:
-            self.mostrarError('Debe seleccionar un producto de la tabla primero.')
+            self.mostrarError('Debe seleccionar un producto de la tabla primero')
 
     def editar_producto_accion(self):
         editar_producto(self)
-        cargar_tabla(self.gestion_productos)
+        buscar_gp(self.gestion_productos)
         cargar_tabla_productos(self)
 
     def ventana_nuevo_producto(self):
@@ -111,21 +113,20 @@ class Application(QMainWindow):
 
     def agregar_nuevo_producto(self):
         agregar_producto(self)
-        cargar_tabla(self.gestion_productos)
+        buscar_gp(self.gestion_productos)
         cargar_tabla_productos(self)
 
     def agregar_nuevo_empleado(self):
         agregar_empleado(self)
-        cargar_tabla_gestion_empleados(self.gestion_empleados)
+        buscar_ge(self.gestion_empleados)
         cargar_comboVendedor(self)
 
     def cargado_stock(self):
         try:
             if cargar_stock(self.gestion_productos) == False:
                 self.mostrarError('Casilla en blanco o valores no numericos')
-            cargar_tabla(self.gestion_productos)
+            buscar_gp(self.gestion_productos)
             cargar_tabla_productos(self)
-            self.gestion_productos.ui.barra_busqueda.setText('')
         except:
             self.mostrarError('Producto no seleccionado o valores no numericos')
 
@@ -144,6 +145,7 @@ class Application(QMainWindow):
     def remover_gestion_productos(self):
         try:
             eliminar(self.gestion_productos)
+            buscar_gp(self.gestion_productos)
             cargar_tabla_productos(self)
         except:
             self.mostrarError('Primero debe seleccionar un producto')
@@ -214,14 +216,14 @@ class Application(QMainWindow):
 
     def agregar_carrito(self):
         if self.ui.selectProducto.text() == '':
-            self.mostrarError('Codigo de producto obligatorio.')
+            self.mostrarError('Codigo de producto obligatorio')
         elif validacion(self.ui.input1.text()) == False or validacion(self.ui.input3.text()) == False:
-            self.mostrarError('Solo se permiten valores numericos.')
+            self.mostrarError('Solo se permiten valores numericos')
         else:
             try:
                 self.importe_total = self.importe_total + agregar_al_carrito(self)
             except:
-                self.mostrarError('Codigo invalido o sin stock.')
+                self.mostrarError('Codigo invalido o sin stock')
 
     def mostrarError(self, mensaje):
         self.msgError = QDialog()

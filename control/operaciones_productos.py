@@ -1,17 +1,5 @@
-from peewee import *
 from PyQt5.QtWidgets import QTableWidgetItem, QTableWidget
-
-db = SqliteDatabase('db.sqlite')
-
-class Producto(Model):
-	codigo = CharField(unique=True)
-	descripcion = CharField()
-	precio = CharField()
-	stock = CharField()
-
-	class Meta:
-		database = db
-		db_table = 'productos'
+from sql.datos import Producto
 
 def cargar_tabla_productos(self):
 	deleteAllRows(self.ui.tablaProductos)

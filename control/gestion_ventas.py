@@ -1,5 +1,5 @@
 # coding=utf-8
-from sql.ventas import Venta
+from sql.datos import Venta
 from PyQt5.QtWidgets import QTableWidgetItem, QTableWidget
 
 

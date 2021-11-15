@@ -3,9 +3,7 @@ import easygui as eg
 import shutil
 from os import remove
 
-from sql.productos import Producto
-from sql.empleados import Vendedor
-from sql.ventas import Venta
+from sql.datos import Producto, Venta, Vendedor
 
 class Excel:
     def __init__(self, nombre_hoja):
@@ -42,19 +40,19 @@ class Excel:
         self.archivo_excel.save(f'{self.nombre_hoja.lower()}.xlsx')
 
     def mover(self):
-        directorio_guardado = eg.diropenbox('Seleccionar carpeta', 'Exportar en', 'C://')
+        directorio_guardado = eg.diropenbox('Seleccionar directorio', 'Generando excel', 'C://')
         if directorio_guardado is not None:
             shutil.move(f'{self.nombre_hoja.lower()}.xlsx', directorio_guardado)
+            return 1
         else:
             remove(f'{self.nombre_hoja.lower()}.xlsx')
+            return 0
 
-def generar_excel(nombre, modelo):
+def generar_excel(self, nombre, modelo):
     excel = Excel(nombre)
     excel.crear()
     excel.cargar(modelo)
     excel.guardar()
-    excel.mover()
+    if excel.mover() == 1:
+        self.mostrarError('Se exporto el archivo con exito')
 
-if __name__ == '__main__':
-
-    generar_excel('productos', Producto)

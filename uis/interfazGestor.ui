@@ -672,6 +672,7 @@ border: none;
      <string>Productos</string>
     </property>
     <addaction name="actionProductos_3"/>
+    <addaction name="separator"/>
     <addaction name="action_exportar_productos"/>
    </widget>
    <widget class="QMenu" name="menuVentas">
@@ -679,6 +680,7 @@ border: none;
      <string>Ventas</string>
     </property>
     <addaction name="actionVentas_3"/>
+    <addaction name="separator"/>
     <addaction name="action_exportar_ventas"/>
    </widget>
    <widget class="QMenu" name="menuEmpleados">
@@ -686,6 +688,7 @@ border: none;
      <string>Empleados</string>
     </property>
     <addaction name="actionEmpleados_2"/>
+    <addaction name="separator"/>
     <addaction name="action_exportar_empleados"/>
    </widget>
    <addaction name="menuProductos"/>

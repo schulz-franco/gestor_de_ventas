@@ -1,10 +1,10 @@
 from control.validacion import validacion
-from sql.productos import Producto
+from sql.datos import Producto
 
 
 def agregar_producto(self):
-    codigo = self.nuevo_producto.ui.input_codigo.text()
-    descripcion = self.nuevo_producto.ui.input_desc.text()
+    codigo = self.nuevo_producto.ui.input_codigo.text().lower()
+    descripcion = self.nuevo_producto.ui.input_desc.text().lower()
     precio = self.nuevo_producto.ui.input_precio.text()
     stock = self.nuevo_producto.ui.input_stock.text()
     if codigo == '' or descripcion == '' or precio == '' or stock == '':
@@ -18,9 +18,10 @@ def agregar_producto(self):
                 precio=precio,
                 stock=stock
             )
-
             clear_inputs(self)
             self.nuevo_producto.ui.input_codigo.setFocus()
+        else:
+            self.mostrarError('Solo valores numericos en precio y stock')
     except:
         self.mostrarError('Ya existe un producto que posee ese codigo')
 

@@ -1,24 +1,7 @@
 from PyQt5.QtWidgets import QTableWidgetItem, QTableWidget
-from peewee import *
+from sql.datos import Vendedor, Venta
+from control.operaciones_productos import reducir_stock, buscar
 import datetime
-
-from sql.productos import reducir_stock, cargar_tabla_productos
-from sql.empleados import Vendedor
-
-db = SqliteDatabase('db.sqlite')
-
-
-class Venta(Model):
-    venta = AutoField(unique=True)
-    codigo_vendedor = CharField()
-    importe = CharField()
-    fecha_registro = DateField(default=datetime.datetime.now())
-    hora_registro = TimeField(default=datetime.datetime.now().time())
-
-    class Meta:
-        database = db
-        db_table = 'ventas'
-
 
 def cerrar_venta(self):
     if self.ui.carrito.item(0, 0) is not None:
@@ -29,7 +12,7 @@ def cerrar_venta(self):
             fecha = self.gestion_ventas.ui.tablaProductos.item(1, 3)
             importe_venta(self)
             deleteAllRows(self.ui.carrito)
-            cargar_tabla_productos(self)
+            buscar(self)
             if not fecha == datetime.date.today():
                 cargar_venta(self)
             else:

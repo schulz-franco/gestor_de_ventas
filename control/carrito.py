@@ -1,5 +1,6 @@
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
-from sql.productos import Producto, cargar_tabla_productos
+from sql.datos import Producto
+from control.operaciones_productos import cargar_tabla_productos
 
 
 def agregar_al_carrito(self):

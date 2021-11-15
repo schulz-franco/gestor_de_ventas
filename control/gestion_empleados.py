@@ -1,5 +1,5 @@
 # coding=utf-8
-from sql.empleados import Vendedor
+from sql.datos import Vendedor
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
 
 
@@ -80,7 +80,7 @@ def eliminar_empleado(self):
     codigo = self.ui.tablaProductos.selectedIndexes()[1].data()[2:]
     for item in Vendedor.select().where(Vendedor.codigo == codigo.lower()):
         item.delete_instance()
-    cargar_tabla_gestion_empleados(self)
+    buscar_ge(self)
 
 def mostrar_informacion_empleado(self):
     id_empleado = self.gestion_empleados.ui.tablaProductos.selectedIndexes()[0].data()

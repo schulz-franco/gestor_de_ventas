@@ -1,4 +1,4 @@
-from sql.productos import Producto
+from sql.datos import Producto
 from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem
 from control.validacion import validacion
 
