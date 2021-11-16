@@ -5,9 +5,6 @@ import easygui as eg
 from sql.datos import Producto
 from os import remove
 
-hoja = ''
-datos = ''
-
 class Factura:
     def __init__(self):
         self.hoja = ''
@@ -18,12 +15,23 @@ class Factura:
         self.hoja = self.plantilla.active
 
     def cargar_datos_cliente(self, modelo):
-        nombre = str(modelo.ventana_datos_cliente.ui.input_nombre.text().capitalize())
-        apellido = str(modelo.ventana_datos_cliente.ui.input_apellido.text().capitalize())
-        dni = int(modelo.ventana_datos_cliente.ui.input_dni.text())
-        telefono = int(modelo.ventana_datos_cliente.ui.input_telefono.text())
-        direccion = str(modelo.ventana_datos_cliente.ui.input_direccion.text().lower())
-        self.datos = [nombre, apellido, dni, telefono, direccion]
+        self.nombre = str(modelo.ventana_datos_cliente.ui.input_nombre.text().capitalize())
+        self.apellido = str(modelo.ventana_datos_cliente.ui.input_apellido.text().capitalize())
+
+        try:
+            self.dni = int(modelo.ventana_datos_cliente.ui.input_dni.text())
+            self.telefono = int(modelo.ventana_datos_cliente.ui.input_telefono.text())
+        except:
+            modelo.mostrarError('Solo valores numericos')
+            return 'error'
+
+        self.direccion = str(modelo.ventana_datos_cliente.ui.input_direccion.text().lower())
+        self.datos = [self.nombre, self.apellido, self.dni, self.telefono, self.direccion]
+
+        for i in range(5):
+            if self.datos[i] == '':
+                modelo.mostrarError('Complete el formulario')
+                return 'error'
 
     def insertar_datos_cliente(self):
         self.hoja["B10"] = f'{self.datos[0]} {self.datos[1]}'
@@ -44,7 +52,6 @@ class Factura:
             self.codigos.append(modelo.ui.carrito.item(i, 0).text().lower())
             self.unidades.append(modelo.ui.carrito.item(i, 1).text())
         self.datos = [self.codigos, self.unidades]
-        return self.datos
 
     def insertar_datos_productos(self, modelo):
         cantidad = len(self.datos[0])
@@ -70,11 +77,13 @@ class Factura:
 
 def exportar_factura(self):
     facturacion = Factura()
-    facturacion.cargar_datos_cliente(self)
-    facturacion.insertar_datos_cliente()
-    facturacion.insertar_fecha()
-    facturacion.obtener_codigos_venta(self)
-    facturacion.insertar_datos_productos(self)
-    facturacion.guardar()
-    if facturacion.exportar() == 1:
-        self.mostrarError('Factura creada con exito')
+    if facturacion.cargar_datos_cliente(self) != 'error':
+        facturacion.insertar_datos_cliente()
+        facturacion.insertar_fecha()
+        facturacion.obtener_codigos_venta(self)
+        facturacion.insertar_datos_productos(self)
+        facturacion.guardar()
+        if facturacion.exportar() == 1:
+            self.mostrarError('Factura creada con exito')
+    else:
+        return 'invalido'

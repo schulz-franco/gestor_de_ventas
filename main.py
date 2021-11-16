@@ -249,15 +249,21 @@ class Application(QMainWindow):
         cancelar_venta(self)
 
     def ventana_datos_cliente(self):
-        self.ventana_datos_cliente = QDialog()
-        self.ventana_datos_cliente.ui = Ui_pedir_datos_cliente()
-        self.ventana_datos_cliente.ui.setupUi(self.ventana_datos_cliente)
-        self.ventana_datos_cliente.ui.btn_generar.clicked.connect(self.generando_factura)
-        self.ventana_datos_cliente.show()
+        filas = self.ui.carrito.rowCount()
+        if filas != 0:
+            self.ventana_datos_cliente = QDialog()
+            self.ventana_datos_cliente.ui = Ui_pedir_datos_cliente()
+            self.ventana_datos_cliente.ui.setupUi(self.ventana_datos_cliente)
+            self.ventana_datos_cliente.ui.btn_generar.clicked.connect(self.generando_factura)
+            self.ventana_datos_cliente.show()
+        else:
+            self.mostrarError('El carrito esta vacío')
 
     def generando_factura(self):
-        exportar_factura(self)
-        self.ventana_datos_cliente.close()
+        if exportar_factura(self) == 'invalido':
+            pass
+        else:
+            self.ventana_datos_cliente.close()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
