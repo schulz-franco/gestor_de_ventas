@@ -478,6 +478,19 @@ border: none;
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="btn_facturar">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Generar factura</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QToolButton" name="btnCerrarVenta">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">

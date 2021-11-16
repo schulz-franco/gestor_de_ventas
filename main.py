@@ -10,6 +10,7 @@ from interfaces.mensajeError import Ui_Dialog
 from interfaces.interfazGestorProductos import Ui_gestion_productos
 from interfaces.interfazNuevoProducto import Ui_nuevo_producto
 from interfaces.interfazMasInformacion import Ui_interfaz_mas_informacion
+from interfaces.interfazPedirDatosCliente import Ui_pedir_datos_cliente
 
 from sql.datos import Producto, Venta, Vendedor
 
@@ -26,6 +27,7 @@ from control.gestion_ventas import conf_tabla_ventas, cargar_tabla_gestion_venta
 from control.gestion_empleados import conf_tabla_empleados, cargar_tabla_gestion_empleados, buscar_ge, eliminar_empleado, mostrar_informacion_empleado
 from control.validacion import validacion
 
+from generar_factura import exportar_factura
 from exportar_excel import generar_excel
 
 import datetime
@@ -62,6 +64,7 @@ class Application(QMainWindow):
         self.ui.input3.returnPressed.connect(self.ui.btn_agregar_carrito.click)
         self.ui.btnCerrarVenta.clicked.connect(self.cerrar_venta)
         self.ui.btnCancelar.clicked.connect(self.cancelar_venta)
+        self.ui.btn_facturar.clicked.connect(self.ventana_datos_cliente)
 
         self.ui.tablaProductos.cellDoubleClicked.connect(self.ingresar_seleccionado)
 
@@ -244,6 +247,17 @@ class Application(QMainWindow):
 
     def cancelar_venta(self):
         cancelar_venta(self)
+
+    def ventana_datos_cliente(self):
+        self.ventana_datos_cliente = QDialog()
+        self.ventana_datos_cliente.ui = Ui_pedir_datos_cliente()
+        self.ventana_datos_cliente.ui.setupUi(self.ventana_datos_cliente)
+        self.ventana_datos_cliente.ui.btn_generar.clicked.connect(self.generando_factura)
+        self.ventana_datos_cliente.show()
+
+    def generando_factura(self):
+        exportar_factura(self)
+        self.ventana_datos_cliente.close()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
