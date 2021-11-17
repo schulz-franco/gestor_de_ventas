@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="assets">
+    <file>assets/anadir-a-la-cesta.png</file>
+    <file>assets/buscar.png</file>
+    <file>assets/factura.png</file>
+    <file>assets/quitar-carrito.png</file>
+  </qresource>
+</RCC>

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>757</width>
+    <width>999</width>
     <height>568</height>
    </rect>
   </property>
@@ -117,6 +117,12 @@ border: none;
               <height>30</height>
              </size>
             </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>30</height>
+             </size>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -130,7 +136,13 @@ border: none;
             <property name="minimumSize">
              <size>
               <width>70</width>
-              <height>30</height>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>32</height>
              </size>
             </property>
             <property name="cursor">
@@ -138,6 +150,16 @@ border: none;
             </property>
             <property name="text">
              <string>Buscar</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../resources.qrc">
+              <normaloff>:/assets/assets/buscar.png</normaloff>:/assets/assets/buscar.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>24</width>
+              <height>24</height>
+             </size>
             </property>
            </widget>
           </item>
@@ -431,7 +453,7 @@ border: none;
           <item>
            <widget class="QCheckBox" name="checkIva">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -457,9 +479,9 @@ border: none;
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="btn_agregar_carrito">
+           <widget class="QToolButton" name="btn_agregar_carrito">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -467,13 +489,13 @@ border: none;
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>30</height>
+              <height>32</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>16777215</height>
+              <height>32</height>
              </size>
             </property>
             <property name="cursor">
@@ -482,12 +504,25 @@ border: none;
             <property name="text">
              <string>Agregar al carrito</string>
             </property>
+            <property name="icon">
+             <iconset resource="../resources.qrc">
+              <normaloff>:/assets/assets/anadir-a-la-cesta.png</normaloff>:/assets/assets/anadir-a-la-cesta.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
            </widget>
           </item>
           <item>
            <widget class="QToolButton" name="btnCancelar">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -495,13 +530,13 @@ border: none;
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>30</height>
+              <height>32</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>16777215</height>
+              <height>32</height>
              </size>
             </property>
             <property name="cursor">
@@ -510,20 +545,33 @@ border: none;
             <property name="text">
              <string>Limpiar carrito</string>
             </property>
+            <property name="icon">
+             <iconset resource="../resources.qrc">
+              <normaloff>:/assets/assets/quitar-carrito.png</normaloff>:/assets/assets/quitar-carrito.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="btn_facturar">
+           <widget class="QToolButton" name="btn_facturar">
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>30</height>
+              <height>32</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>16777215</height>
+              <height>32</height>
              </size>
             </property>
             <property name="cursor">
@@ -532,19 +580,32 @@ border: none;
             <property name="text">
              <string>Generar factura</string>
             </property>
+            <property name="icon">
+             <iconset resource="../resources.qrc">
+              <normaloff>:/assets/assets/factura.png</normaloff>:/assets/assets/factura.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
+            </property>
            </widget>
           </item>
           <item>
            <widget class="QComboBox" name="comboVendedor">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>150</width>
               <height>30</height>
              </size>
             </property>
@@ -562,28 +623,40 @@ border: none;
           <item>
            <widget class="QToolButton" name="btnCerrarVenta">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
-              <height>30</height>
+              <width>90</width>
+              <height>32</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>16777215</height>
+              <height>32</height>
              </size>
             </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
-             <string>Cerrar venta</string>
+             <string> Cerrar venta</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>30</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="toolButtonStyle">
+             <enum>Qt::ToolButtonTextBesideIcon</enum>
             </property>
            </widget>
           </item>
@@ -716,7 +789,7 @@ border: none;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>757</width>
+     <width>999</width>
      <height>21</height>
     </rect>
    </property>
@@ -819,6 +892,8 @@ border: none;
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
