@@ -1,4 +1,4 @@
-from sql.datos import Producto, Venta, Vendedor, N_factura
+from sql.datos import Producto, Venta, Vendedor, N_factura, Facturas
 
 def iniciar_db():
     if not Producto.table_exists():
@@ -10,3 +10,5 @@ def iniciar_db():
     if not N_factura.table_exists():
         N_factura.create_table()
         N_factura.create(numero='1')
+    if not Facturas.table_exists():
+        Facturas.create_table()

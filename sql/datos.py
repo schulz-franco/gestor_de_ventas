@@ -41,3 +41,17 @@ class N_factura(Model):
     class Meta:
         database = db
         db_table = 'numero_facturas'
+
+class Facturas(Model):
+    numero = CharField()
+    nombre_cliente = CharField()
+    apellido_cliente = CharField()
+    dni_cliente = CharField()
+    telefono_cliente = CharField()
+    direccion_cliente = CharField()
+    importe_total = CharField()
+    fecha_emision = CharField(default=datetime.date.today())
+
+    class Meta:
+        database = db
+        db_table = 'facturas_emitidas'

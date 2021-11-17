@@ -2,7 +2,7 @@ import shutil
 import openpyxl as xl
 import datetime
 import easygui as eg
-from sql.datos import Producto, N_factura
+from sql.datos import Producto, N_factura, Facturas
 import os
 
 class Factura:
@@ -59,10 +59,10 @@ class Factura:
         fecha = datetime.date.today()
         divido = str(fecha).split('-')
         for row in N_factura.select():
-            numero = f'{divido[0]}{divido[1]}{divido[2]}{row.numero}'
+            self.numero = f'{divido[0]}{divido[1]}{divido[2]}{row.numero}'
             row.numero = str(int(row.numero) + 1)
             row.save()
-        self.hoja["F9"] = numero
+        self.hoja["F9"] = self.numero
 
     def obtener_codigos_venta(self, modelo):
         filas = int(modelo.ui.carrito.rowCount())
@@ -86,19 +86,36 @@ class Factura:
     def guardar(self):
         self.plantilla.save('factura.xlsx')
 
-    def exportar(self):
+    def exportar(self, modelo):
         directorio_guardado = eg.diropenbox('Seleccionar directorio', 'Generando excel', 'C://')
         nombre = 'factura'
         if directorio_guardado is not None:
             if not os.path.exists(f'{directorio_guardado}\{nombre}.xlsx'):
+                self.cargar_factura(modelo)
                 shutil.move('factura.xlsx', directorio_guardado)
             else:
+                self.cargar_factura(modelo)
                 os.remove(f'{directorio_guardado}\{nombre}.xlsx')
                 shutil.move('factura.xlsx', directorio_guardado)
             return 1
         else:
             os.remove('factura.xlsx')
             return 0
+
+    def cargar_factura(self, modelo):
+        importe = 0
+        for cont in range(modelo.ui.carrito.rowCount()):
+            importe = importe + int(modelo.ui.carrito.item(cont, 5).text()[2:])
+
+        Facturas.create(
+            numero=str(self.numero),
+            nombre_cliente=self.nombre,
+            apellido_cliente=self.apellido,
+            dni_cliente=str(self.dni),
+            telefono_cliente=str(self.telefono),
+            direccion_cliente=str(self.direccion),
+            importe_total=f'$ {importe}'
+        )
 
 def exportar_factura(self):
     facturacion = Factura()
@@ -110,7 +127,7 @@ def exportar_factura(self):
         facturacion.obtener_codigos_venta(self)
         facturacion.insertar_datos_productos(self)
         facturacion.guardar()
-        if facturacion.exportar() == 1:
+        if facturacion.exportar(self) == 1:
             self.mostrarError('Factura creada con exito')
     else:
         return 'invalido'
