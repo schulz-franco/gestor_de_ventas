@@ -41,6 +41,39 @@ class Excel:
         else:
             print('Modelo de datos invalido')
 
+    def ajustar_columnas(self, modelo):
+        if modelo is Producto:
+            self.hoja.column_dimensions["A"].width = 8
+            self.hoja.column_dimensions["B"].width = 10
+            self.hoja.column_dimensions["C"].width = 40
+            self.hoja.column_dimensions["D"].width = 8
+            self.hoja.column_dimensions["E"].width = 8
+        elif modelo is Vendedor:
+            self.hoja.column_dimensions["A"].width = 8
+            self.hoja.column_dimensions["B"].width = 10
+            self.hoja.column_dimensions["C"].width = 14
+            self.hoja.column_dimensions["D"].width = 14
+            self.hoja.column_dimensions["E"].width = 6
+            self.hoja.column_dimensions["F"].width = 8
+        elif modelo is Venta:
+            self.hoja.column_dimensions["A"].width = 8
+            self.hoja.column_dimensions["B"].width = 14
+            self.hoja.column_dimensions["C"].width = 8
+            self.hoja.column_dimensions["D"].width = 14
+            self.hoja.column_dimensions["E"].width = 13
+        elif modelo is Facturas:
+            self.hoja.column_dimensions["A"].width = 8
+            self.hoja.column_dimensions["B"].width = 20
+            self.hoja.column_dimensions["C"].width = 14
+            self.hoja.column_dimensions["D"].width = 14
+            self.hoja.column_dimensions["E"].width = 14
+            self.hoja.column_dimensions["F"].width = 14
+            self.hoja.column_dimensions["G"].width = 25
+            self.hoja.column_dimensions["H"].width = 12
+            self.hoja.column_dimensions["I"].width = 16
+        else:
+            print('Modelo de datos invalido')
+
     def guardar(self):
         self.archivo_excel.save(f'{self.nombre_hoja.lower()}.xlsx')
 
@@ -61,6 +94,7 @@ def generar_excel(self, nombre, modelo):
     excel = Excel(nombre)
     excel.crear()
     excel.cargar(modelo)
+    excel.ajustar_columnas(modelo)
     excel.guardar()
     if excel.mover() == 1:
         self.mostrarError('Se exporto el archivo con exito')

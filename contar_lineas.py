@@ -19,10 +19,15 @@ archivos = [
     'main.py',
 ]
 
-cont = 0
-for i in range(len(archivos)):
-    f = open(archivos[i], "r")
-    for linea in f:
-        cont += 1
-    f.close()
-print(f'Total de {cont} lineas de codigo')
+def contar_lineas():
+    cont = 0
+    for i in range(len(archivos)):
+        f = open(archivos[i], "r")
+        for linea in f:
+            cont += 1
+        f.close()
+    print(f'Total de {cont} lineas de codigo')
+
+if __name__ == '__main__':
+
+    contar_lineas()
