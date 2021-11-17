@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0ec02a7-8eb1-4cd9-bf06-09f75a5cc4a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/control/gestion_facturas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/gestion_ventas.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/gestion_ventas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/interfazGestor.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/interfazGestor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exportar_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/exportar_excel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uis/interfazGestor.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uis/interfazGestor.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

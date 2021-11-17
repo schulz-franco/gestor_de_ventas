@@ -12,7 +12,7 @@ from interfaces.interfazNuevoProducto import Ui_nuevo_producto
 from interfaces.interfazMasInformacion import Ui_interfaz_mas_informacion
 from interfaces.interfazPedirDatosCliente import Ui_pedir_datos_cliente
 
-from sql.datos import Producto, Venta, Vendedor
+from sql.datos import Producto, Venta, Vendedor, Facturas
 
 from control.operaciones_ventas import cerrar_venta
 from control.operaciones_productos import cargar_tabla_productos, buscar
@@ -55,6 +55,7 @@ class Application(QMainWindow):
         self.ui.action_exportar_productos.triggered.connect(self.excel_productos)
         self.ui.action_exportar_empleados.triggered.connect(self.excel_empleados)
         self.ui.action_exportar_ventas.triggered.connect(self.excel_ventas)
+        self.ui.action_exportar_facturas.triggered.connect(self.excel_facturas)
 
         self.ui.checkIva.setChecked(1)
         self.ui.btnBuscar1.clicked.connect(self.buscar)
@@ -86,6 +87,9 @@ class Application(QMainWindow):
 
     def excel_ventas(self):
         generar_excel(self, 'ventas', Venta)
+
+    def excel_facturas(self):
+        generar_excel(self, 'facturas', Facturas)
 
     def ingresar_seleccionado(self):
         ingresar_producto_seleccionado(self)

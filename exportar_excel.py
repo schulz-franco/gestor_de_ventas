@@ -3,7 +3,7 @@ import easygui as eg
 import shutil
 import os
 
-from sql.datos import Producto, Venta, Vendedor
+from sql.datos import Producto, Venta, Vendedor, Facturas
 
 class Excel:
     def __init__(self, nombre_hoja):
@@ -20,6 +20,8 @@ class Excel:
             self.hoja.append(('ID', 'Codigo', 'Nombre', 'Apellido', 'Edad', 'Ventas'))
         elif self.nombre_hoja.lower() == 'ventas':
             self.hoja.append(('ID', 'Cod. Empleado', 'Importe', 'Fecha de venta', 'Hora de venta'))
+        elif self.nombre_hoja.lower() == 'facturas':
+            self.hoja.append(('ID', 'Numero de factura', 'Nombre', 'Apellido', 'DNI', 'Telefono', 'Direccion', 'Importe', 'Fecha de emision'))
         else:
             print('Nombre de hoja invalido')
 
@@ -33,6 +35,9 @@ class Excel:
         elif modelo is Venta:
             for row in modelo.select():
                 self.hoja.append((row.venta, row.codigo_vendedor.upper(), row.importe, row.fecha_registro, row.hora_registro))
+        elif modelo is Facturas:
+            for row in modelo.select():
+                self.hoja.append((str(row.id), row.numero, row.nombre_cliente, row.apellido_cliente, row.dni_cliente, row.telefono_cliente, row.direccion_cliente, row.importe_total, row.fecha_emision))
         else:
             print('Modelo de datos invalido')
 
