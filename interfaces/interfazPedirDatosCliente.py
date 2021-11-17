@@ -139,6 +139,7 @@ class Ui_pedir_datos_cliente(object):
         self.verticalLayout.addWidget(self.frame_2)
         self.btn_generar = QtWidgets.QPushButton(pedir_datos_cliente)
         self.btn_generar.setMinimumSize(QtCore.QSize(0, 34))
+        self.btn_generar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_generar.setObjectName("btn_generar")
         self.verticalLayout.addWidget(self.btn_generar)
 

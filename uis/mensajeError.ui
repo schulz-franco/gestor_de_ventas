@@ -76,6 +76,9 @@ border: none;
        <height>35</height>
       </size>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="text">
       <string>Aceptar</string>
      </property>

@@ -46,6 +46,7 @@ class Ui_Dialog(object):
         self.verticalLayout.addWidget(self.frame)
         self.btn_aceptar_error = QtWidgets.QPushButton(Dialog)
         self.btn_aceptar_error.setMinimumSize(QtCore.QSize(0, 35))
+        self.btn_aceptar_error.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.btn_aceptar_error.setObjectName("btn_aceptar_error")
         self.verticalLayout.addWidget(self.btn_aceptar_error)
 

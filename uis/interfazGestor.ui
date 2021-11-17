@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>670</width>
+    <width>757</width>
     <height>568</height>
    </rect>
   </property>
@@ -132,6 +132,9 @@ border: none;
               <width>70</width>
               <height>30</height>
              </size>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="text">
              <string>Buscar</string>
@@ -367,6 +370,12 @@ border: none;
               <height>30</height>
              </size>
             </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <property name="placeholderText">
              <string>Codigo de producto</string>
             </property>
@@ -378,6 +387,12 @@ border: none;
              <size>
               <width>0</width>
               <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>120</width>
+              <height>16777215</height>
              </size>
             </property>
             <property name="placeholderText">
@@ -399,6 +414,12 @@ border: none;
               <height>30</height>
              </size>
             </property>
+            <property name="maximumSize">
+             <size>
+              <width>140</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -410,7 +431,7 @@ border: none;
           <item>
            <widget class="QCheckBox" name="checkIva">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -420,92 +441,18 @@ border: none;
               <width>0</width>
               <height>30</height>
              </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="text">
              <string>Incluir IVA (21%)</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <widget class="QFrame" name="frame_13">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QFrame#frame_13 {
-border: none;
-}</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QComboBox" name="comboVendedor">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>30</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="btn_facturar">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Generar factura</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QToolButton" name="btnCerrarVenta">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Cerrar venta</string>
             </property>
            </widget>
           </item>
@@ -519,9 +466,18 @@ border: none;
             </property>
             <property name="minimumSize">
              <size>
-              <width>170</width>
+              <width>0</width>
               <height>30</height>
              </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="text">
              <string>Agregar al carrito</string>
@@ -542,8 +498,92 @@ border: none;
               <height>30</height>
              </size>
             </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="text">
              <string>Limpiar carrito</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_facturar">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Generar factura</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboVendedor">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="btnCerrarVenta">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Cerrar venta</string>
             </property>
            </widget>
           </item>
@@ -676,7 +716,7 @@ border: none;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>670</width>
+     <width>757</width>
      <height>21</height>
     </rect>
    </property>
@@ -685,7 +725,6 @@ border: none;
      <string>Productos</string>
     </property>
     <addaction name="actionProductos_3"/>
-    <addaction name="separator"/>
     <addaction name="action_exportar_productos"/>
    </widget>
    <widget class="QMenu" name="menuVentas">
@@ -703,7 +742,6 @@ border: none;
      <string>Empleados</string>
     </property>
     <addaction name="actionEmpleados_2"/>
-    <addaction name="separator"/>
     <addaction name="action_exportar_empleados"/>
    </widget>
    <addaction name="menuProductos"/>
