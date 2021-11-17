@@ -2,8 +2,8 @@ import shutil
 import openpyxl as xl
 import datetime
 import easygui as eg
-from sql.datos import Producto
-from os import remove
+from sql.datos import Producto, N_factura
+import os
 
 class Factura:
     def __init__(self):
@@ -44,6 +44,26 @@ class Factura:
         self.hoja["F10"] = str(fecha)
         self.hoja["F11"] = ''
 
+    def insertar_fecha_vencimiento(self):
+        fecha = datetime.date.today()
+        divido = str(fecha).split('-')
+        if divido[1] == '12':
+            sumo_año = str(int(divido[0]) + 1)
+            fecha_final = f'{sumo_año}-{divido[1]}-{divido[2]}'
+        else:
+            sumo_mes = str(int(divido[1]) + 1)
+            fecha_final = f'{divido[0]}-{sumo_mes}-{divido[2]}'
+        self.hoja["F11"] = fecha_final
+
+    def insertar_numero_factura(self):
+        fecha = datetime.date.today()
+        divido = str(fecha).split('-')
+        for row in N_factura.select():
+            numero = f'{divido[0]}{divido[1]}{divido[2]}{row.numero}'
+            row.numero = str(int(row.numero) + 1)
+            row.save()
+        self.hoja["F9"] = numero
+
     def obtener_codigos_venta(self, modelo):
         filas = int(modelo.ui.carrito.rowCount())
         self.codigos = []
@@ -68,11 +88,16 @@ class Factura:
 
     def exportar(self):
         directorio_guardado = eg.diropenbox('Seleccionar directorio', 'Generando excel', 'C://')
+        nombre = 'factura'
         if directorio_guardado is not None:
-            shutil.move('factura.xlsx', directorio_guardado)
+            if not os.path.exists(f'{directorio_guardado}\{nombre}.xlsx'):
+                shutil.move('factura.xlsx', directorio_guardado)
+            else:
+                os.remove(f'{directorio_guardado}\{nombre}.xlsx')
+                shutil.move('factura.xlsx', directorio_guardado)
             return 1
         else:
-            remove('factura.xlsx')
+            os.remove('factura.xlsx')
             return 0
 
 def exportar_factura(self):
@@ -80,6 +105,8 @@ def exportar_factura(self):
     if facturacion.cargar_datos_cliente(self) != 'error':
         facturacion.insertar_datos_cliente()
         facturacion.insertar_fecha()
+        facturacion.insertar_fecha_vencimiento()
+        facturacion.insertar_numero_factura()
         facturacion.obtener_codigos_venta(self)
         facturacion.insertar_datos_productos(self)
         facturacion.guardar()

@@ -34,3 +34,10 @@ class Vendedor(Model):
     class Meta:
         database = db
         db_table = 'vendedores'
+
+class N_factura(Model):
+    numero = CharField()
+
+    class Meta:
+        database = db
+        db_table = 'numero_facturas'

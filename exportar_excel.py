@@ -1,7 +1,7 @@
 import openpyxl as xl
 import easygui as eg
 import shutil
-from os import remove
+import os
 
 from sql.datos import Producto, Venta, Vendedor
 
@@ -42,10 +42,14 @@ class Excel:
     def mover(self):
         directorio_guardado = eg.diropenbox('Seleccionar directorio', 'Generando excel', 'C://')
         if directorio_guardado is not None:
-            shutil.move(f'{self.nombre_hoja.lower()}.xlsx', directorio_guardado)
+            if not os.path.exists(f'{directorio_guardado}\{self.nombre_hoja.lower()}.xlsx'):
+                shutil.move(f'{self.nombre_hoja.lower()}.xlsx', directorio_guardado)
+            else:
+                os.remove(f'{directorio_guardado}\{self.nombre_hoja.lower()}.xlsx')
+                shutil.move(f'{self.nombre_hoja.lower()}.xlsx', directorio_guardado)
             return 1
         else:
-            remove(f'{self.nombre_hoja.lower()}.xlsx')
+            os.remove(f'{self.nombre_hoja.lower()}.xlsx')
             return 0
 
 def generar_excel(self, nombre, modelo):
