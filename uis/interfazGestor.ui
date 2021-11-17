@@ -690,11 +690,13 @@ border: none;
    </widget>
    <widget class="QMenu" name="menuVentas">
     <property name="title">
-     <string>Ventas</string>
+     <string>Registros</string>
     </property>
     <addaction name="actionVentas_3"/>
-    <addaction name="separator"/>
     <addaction name="action_exportar_ventas"/>
+    <addaction name="separator"/>
+    <addaction name="actionFacturas_3"/>
+    <addaction name="action_exportar_facturas"/>
    </widget>
    <widget class="QMenu" name="menuEmpleados">
     <property name="title">
@@ -745,7 +747,7 @@ border: none;
   </action>
   <action name="actionVentas_3">
    <property name="text">
-    <string>Consultar</string>
+    <string>Consultar ventas</string>
    </property>
   </action>
   <action name="actionEmpleados_2">
@@ -764,6 +766,16 @@ border: none;
    </property>
   </action>
   <action name="action_exportar_ventas">
+   <property name="text">
+    <string>Exportar excel</string>
+   </property>
+  </action>
+  <action name="actionFacturas_3">
+   <property name="text">
+    <string>Consultar facturas</string>
+   </property>
+  </action>
+  <action name="action_exportar_facturas">
    <property name="text">
     <string>Exportar excel</string>
    </property>

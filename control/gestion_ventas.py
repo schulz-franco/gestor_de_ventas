@@ -42,7 +42,7 @@ def filtros_venta(self):
                 ids.append(row.codigo_vendedor)
                 cont += 1
 
-        for i, row in enumerate(Venta.select()):
+        for row in Venta.select():
             habilitado = True
             if buscado in str(row.fecha_registro):
                 for code in ids:

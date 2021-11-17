@@ -24,6 +24,7 @@ from control.nuevo_producto import agregar_producto
 from control.nuevo_empleado import agregar_empleado
 from control.editar_producto import cargar, editar_producto
 from control.gestion_ventas import conf_tabla_ventas, cargar_tabla_gestion_ventas, filtros_venta
+from control.gestion_facturas import conf_tabla_facturas, cargar_tabla_facturas, filtros_factura
 from control.gestion_empleados import conf_tabla_empleados, cargar_tabla_gestion_empleados, buscar_ge, eliminar_empleado, mostrar_informacion_empleado
 from control.validacion import validacion
 
@@ -48,6 +49,7 @@ class Application(QMainWindow):
 
         self.ui.actionProductos_3.triggered.connect(self.gestion_productos)
         self.ui.actionVentas_3.triggered.connect(self.gestion_ventas)
+        self.ui.actionFacturas_3.triggered.connect(self.gestion_facturas)
         self.ui.actionEmpleados_2.triggered.connect(self.gestion_empleados)
 
         self.ui.action_exportar_productos.triggered.connect(self.excel_productos)
@@ -160,11 +162,21 @@ class Application(QMainWindow):
         self.gestion_ventas = QDialog()
         self.gestion_ventas.ui = Ui_gestion_productos()
         self.gestion_ventas.ui.setupUi(self.gestion_ventas)
-        self.gestion_ventas.setWindowTitle('Gestion de ventas')
+        self.gestion_ventas.setWindowTitle('Registro de ventas')
         conf_tabla_ventas(self.gestion_ventas)
         cargar_tabla_gestion_ventas(self.gestion_ventas)
         self.gestion_ventas.ui.btn_buscar.clicked.connect(self.buscar_venta)
         self.gestion_ventas.show()
+
+    def gestion_facturas(self):
+        self.gestion_facturas = QDialog()
+        self.gestion_facturas.ui = Ui_gestion_productos()
+        self.gestion_facturas.ui.setupUi(self.gestion_facturas)
+        self.gestion_facturas.setWindowTitle('Registro de facturacion')
+        conf_tabla_facturas(self.gestion_facturas)
+        cargar_tabla_facturas(self.gestion_facturas)
+        self.gestion_facturas.ui.btn_buscar.clicked.connect(self.buscar_factura)
+        self.gestion_facturas.show()
 
     def gestion_empleados(self):
         self.gestion_empleados = QDialog()
@@ -213,6 +225,9 @@ class Application(QMainWindow):
 
     def buscar_venta(self):
         filtros_venta(self.gestion_ventas)
+
+    def buscar_factura(self):
+        filtros_factura(self.gestion_facturas)
 
     def buscar(self):
         buscar(self)
