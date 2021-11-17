@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="assets">
+    <file>assets/editar.png</file>
+    <file>assets/menos.png</file>
+    <file>assets/nuevo.png</file>
     <file>assets/anadir-a-la-cesta.png</file>
     <file>assets/buscar.png</file>
     <file>assets/factura.png</file>

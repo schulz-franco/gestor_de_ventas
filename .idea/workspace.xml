@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0ec02a7-8eb1-4cd9-bf06-09f75a5cc4a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/moneda.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/moneda.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaces/interfazGestor.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/interfazGestor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/interfazPedirDatosCliente.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/interfazPedirDatosCliente.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaces/interfazGestorProductos.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/interfazGestorProductos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources.qrc" beforeDir="false" afterPath="$PROJECT_DIR$/resources.qrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources_rc.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources_rc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uis/interfazGestor.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uis/interfazGestor.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uis/interfazPedirDatosCliente.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uis/interfazPedirDatosCliente.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uis/interfazGestorProductos.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uis/interfazGestorProductos.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,11 +124,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Python\sistema_gestion_comercial\interfaces" />
       <recent name="C:\Users\Alumnos\Desktop\sistema_gestion_comercial\interfaces" />
       <recent name="C:\Python\gestor_de_ventas\interfaces" />
       <recent name="C:\gestor_de_ventas\interfaces" />
       <recent name="C:\Python\gestor_de_ventas" />
-      <recent name="$PROJECT_DIR$/interfaces" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

@@ -647,7 +647,7 @@ border: none;
              <string notr="true"/>
             </property>
             <property name="text">
-             <string> Cerrar venta</string>
+             <string>Cerrar venta</string>
             </property>
             <property name="iconSize">
              <size>

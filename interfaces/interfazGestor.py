@@ -396,7 +396,7 @@ class Ui_MainWindow(object):
         self.btn_agregar_carrito.setText(_translate("MainWindow", "Agregar al carrito"))
         self.btnCancelar.setText(_translate("MainWindow", "Limpiar carrito"))
         self.btn_facturar.setText(_translate("MainWindow", "Generar factura"))
-        self.btnCerrarVenta.setText(_translate("MainWindow", " Cerrar venta"))
+        self.btnCerrarVenta.setText(_translate("MainWindow", "Cerrar venta"))
         item = self.carrito.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Cod. Producto"))
         item = self.carrito.horizontalHeaderItem(1)
