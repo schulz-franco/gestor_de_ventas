@@ -76,6 +76,7 @@ class Application(QMainWindow):
         self.showMaximized()
 
         self.gestion_ventas()
+        self.gestion_ventas.close()
 
         self.show()
 

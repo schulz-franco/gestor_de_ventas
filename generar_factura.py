@@ -33,6 +33,14 @@ class Factura:
                 modelo.mostrarError('Complete el formulario')
                 return 'error'
 
+        if not len(str(self.datos[2])) == 8:
+            modelo.mostrarError('DNI invalido')
+            return 'error'
+
+        if not len(str(self.datos[3])) == 10:
+            modelo.mostrarError('Numero telefonico invalido')
+            return 'error'
+
     def insertar_datos_cliente(self):
         self.hoja["B10"] = f'{self.datos[0]} {self.datos[1]}'
         self.hoja["B11"] = self.datos[2]

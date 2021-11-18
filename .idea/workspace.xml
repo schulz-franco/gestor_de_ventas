@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0ec02a7-8eb1-4cd9-bf06-09f75a5cc4a1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/carrito.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/carrito.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/control/operaciones_ventas.py" beforeDir="false" afterPath="$PROJECT_DIR$/control/operaciones_ventas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/interfazNuevoProducto.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/interfazNuevoProducto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaces/interfazPedirDatosCliente.py" beforeDir="false" afterPath="$PROJECT_DIR$/interfaces/interfazPedirDatosCliente.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uis/interfazNuevoProducto.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uis/interfazNuevoProducto.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uis/interfazPedirDatosCliente.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uis/interfazPedirDatosCliente.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generar_factura.py" beforeDir="false" afterPath="$PROJECT_DIR$/generar_factura.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
