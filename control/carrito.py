@@ -57,7 +57,7 @@ def agregar_al_carrito(self):
 
 def cancelar_venta(self):
     deleteAllRows(self.ui.carrito)
-    self.ui.importe_de_venta.setText('Importe total: ')
+    self.ui.importe_de_venta.setText('TOTAL')
     self.importe_total = 0
 
 

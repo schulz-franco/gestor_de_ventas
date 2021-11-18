@@ -6,14 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>202</height>
+    <width>256</width>
+    <height>272</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Nuevo producto</string>
+   <string>Ingresar datos</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;Nuevo producto&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
    <item>
     <widget class="QFrame" name="frame">
      <property name="styleSheet">
@@ -41,15 +48,41 @@ border: none;
        <number>0</number>
       </property>
       <item>
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Codigo</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QLineEdit" name="input_codigo">
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>30</height>
+          <height>24</height>
          </size>
         </property>
         <property name="placeholderText">
-         <string>Codigo</string>
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Descripcion</string>
         </property>
        </widget>
       </item>
@@ -58,11 +91,24 @@ border: none;
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>30</height>
+          <height>24</height>
          </size>
         </property>
         <property name="placeholderText">
-         <string>Descripcion</string>
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Precio unitario</string>
         </property>
        </widget>
       </item>
@@ -71,11 +117,24 @@ border: none;
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>30</height>
+          <height>24</height>
          </size>
         </property>
         <property name="placeholderText">
-         <string>Precio unitario</string>
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Stock</string>
         </property>
        </widget>
       </item>
@@ -84,11 +143,11 @@ border: none;
         <property name="minimumSize">
          <size>
           <width>0</width>
-          <height>30</height>
+          <height>24</height>
          </size>
         </property>
         <property name="placeholderText">
-         <string>Stock</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -100,19 +159,19 @@ border: none;
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>40</height>
+       <height>34</height>
       </size>
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <pointsize>8</pointsize>
       </font>
      </property>
      <property name="cursor">
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="text">
-      <string>Agregar</string>
+      <string>Cargar producto</string>
      </property>
     </widget>
    </item>

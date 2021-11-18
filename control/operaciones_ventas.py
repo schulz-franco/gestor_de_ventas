@@ -34,7 +34,7 @@ def importe_venta(self):
     importe = 0
     for cont in range(self.ui.carrito.rowCount()):
         importe = importe + int(self.ui.carrito.item(cont, 5).text()[2:])
-    self.ui.importe_de_venta.setText(f'TOTAL: ${importe}')
+    self.ui.importe_de_venta.setText(f'TOTAL: $ {importe}')
     self.ui.importe_de_venta.show()
 
 
