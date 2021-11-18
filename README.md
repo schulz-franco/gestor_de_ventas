@@ -1,5 +1,6 @@
 # sistema_gestion_comercial
-Gestor de productos, stocks, ventas e importes.
+
+Gestion de inventario, empleados, ventas y facturas
 
 Interfaz principal:
 
