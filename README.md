@@ -5,7 +5,7 @@ Gestion de inventario, empleados, ventas y facturas
 Practica de manejo de datos, se uso SQLite y Peewe como ORM. Tomar este proyecto solo como ejemplo de codigo.
 Los paquetes requeridos son solicitados al momento de ejecutar.
 
-Interfaz principal:
+# Interfaz principal:
 
 - Consulta de productos
 - Filtrar por descripcion de producto
@@ -24,7 +24,7 @@ Interfaz principal:
 - Carga de ventas realizadas por cada empleado
 - Validaciones y trata de errores
 
-Interfaz gestion de productos:
+# Interfaz gestion de productos:
 
 - Consulta de productos
 - Filtrar por codigo o descripcion
@@ -36,7 +36,7 @@ Interfaz gestion de productos:
 - Exportar tabla de productos completa a un archivo Excel
 - Validaciones y trata de errores
 
-Interfaz gestion de empleados:
+# Interfaz gestion de empleados:
 
 - Consulta de empleados
 - Filtrar por codigo, nombre o apellido
@@ -47,13 +47,13 @@ Interfaz gestion de empleados:
 - Exportar tabla de empleados a un archivo Excel
 - Validaciones y trata de errores
 
-Interfaz consulta de ventas:
+# Interfaz consulta de ventas:
 
 - Consulta de ventas
 - Filtrar por codigo de empleado o fecha (año, mes, dia o todos)
 - Exportar registro de ventas a un archivo Excel
 
-Interfaz consulta de facturas:
+# Interfaz consulta de facturas:
 
 - Consulta de facturas
 - Filtrar por nombre de cliente, apellido o fecha de emision (año, mes, dia o todos)
