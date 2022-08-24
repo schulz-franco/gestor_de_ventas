@@ -2,6 +2,9 @@
 
 Gestion de inventario, empleados, ventas y facturas
 
+Practica de manejo de datos, se uso SQLite y Peewe como ORM. Tomar este proyecto solo como ejemplo de codigo.
+Los paquetes requeridos son solicitados al momento de ejecutar.
+
 Interfaz principal:
 
 - Consulta de productos
