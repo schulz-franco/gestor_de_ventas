@@ -1,8 +1,8 @@
 # sistema_gestion_comercial
 
-Gestion de inventario, empleados, ventas y facturas
+Gestión de inventario, empleados, ventas y facturas
 
-Practica de manejo de datos, se uso SQLite y Peewe como ORM. Ver este proyecto solo como ejemplo de codigo. \
+Práctica de manejo de datos, se usó SQLite y Peewee como ORM. Ver este proyecto solo como ejemplo de código. \
 Los paquetes requeridos son solicitados al momento de ejecutar.
 
 # Interfaz principal:
